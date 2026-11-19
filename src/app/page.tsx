@@ -287,6 +287,10 @@ const featureGroups = [
     intro:
       "Гальмівні стенди JEVOL забезпечують повний комплекс вимірювань під час проведення обов'язкового технічного контролю транспортних засобів в Україні.",
     items: brakeStandFeatures,
+    image: {
+      src: storageUrl("images", "stacionarni-galmivni-stendi/23.webp"),
+      alt: "Стаціонарний гальмівний стенд JEVOL — деталь роликів",
+    },
   },
   {
     id: "play",
@@ -296,6 +300,10 @@ const featureGroups = [
     intro:
       "Детектор люфтів JEVOL (Play Detector) забезпечує точну та швидку діагностику ходової частини транспортних засобів під час проведення обов'язкового технічного контролю в Україні.",
     items: playDetectorFeatures,
+    image: {
+      src: storageUrl("images", "detektor-lyuftiv/fotoLuft1.webp"),
+      alt: "Детектор люфтів ходової частини JEVOL",
+    },
   },
   {
     id: "diag",
@@ -305,6 +313,10 @@ const featureGroups = [
     intro:
       "Повний комплекс приладів JEVOL для діагностики транспортних засобів під час обов'язкового технічного контролю в Україні. Всі прилади працюють в єдиній системі та формують єдиний протокол випробувань.",
     items: diagnosticsFeatures,
+    image: {
+      src: storageUrl("images", "gazoanalizator-jve-501/1.webp"),
+      alt: "Комплекс JEVOL: газоаналізатор JVE-501 та димомір JVS-600",
+    },
   },
 ];
 
