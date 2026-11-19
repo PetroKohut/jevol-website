@@ -384,39 +384,30 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-28 pt-12 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:pb-36 lg:pt-20">
             <div>
               <p className="w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
-                Офіційний представник Shanghai JEVOL в Україні
+                Офіційний представник JEVOL в Україні
               </p>
-              <h1 className="mt-6 text-4xl font-extrabold leading-[1.06] tracking-tight sm:text-6xl">
-                Точність, якій довіряють технічний контроль
+              <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+                Сучасне високоточне обладнання для діагностики транспортних
+                засобів
               </h1>
               <p className="mt-5 max-w-lg text-lg text-slate-300 sm:text-xl">
-                Обладнання для випробувальних лабораторій та технічного контролю
-                транспортних засобів.
+                Гальмівні стенди, детектор люфтів, газоаналізатор, димомір,
+                реглоскоп та додаткове обладнання для техогляду.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="#categories"
-                  className="inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
+                  href="https://wa.me/380504709561"
+                  className="inline-flex h-12 items-center rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
                 >
-                  Переглянути обладнання <span aria-hidden>→</span>
+                  Написати нам у WhatsApp
                 </a>
                 <a
-                  href="#contact"
+                  href="#categories"
                   className="inline-flex h-12 items-center rounded-md border border-white/40 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
                 >
-                  Отримати консультацію
+                  Переглянути прилади
                 </a>
               </div>
-              <ul className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-slate-300">
-                {["ДСТУ 3649", "ДСТУ 3333", "ISO/IEC 17025:2019"].map((t) => (
-                  <li
-                    key={t}
-                    className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5"
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
             </div>
             <div className="relative">
               <div
