@@ -270,6 +270,14 @@ const whyCards = [
   { title: "Комплексне програмне забезпечення", item: trustItems[4] },
 ];
 
+// Simple stroke icons for the "Why JEVOL" cards (same order as whyCards).
+const whyIcons = [
+  "M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6l-8-3Zm-3 9 2.2 2.2L15.5 10",
+  "M3 21V9l9-6 9 6v12M3 21h18M9 21v-6h6v6",
+  "M14.7 6.3a4 4 0 0 0 5 5L21 12.6 12.6 21a2.1 2.1 0 0 1-3-3L17.9 9.7",
+  "M4 5h16v11H4zM8 20h8M12 16v4M8 9l2 2 4-4",
+];
+
 const featureGroups = [
   {
     id: "brake",
@@ -381,11 +389,11 @@ export default function Home() {
             className="-z-20 object-cover object-[70%_center]"
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/80 to-navy/10 max-md:bg-gradient-to-b max-md:from-navy/90 max-md:via-navy/70 max-md:to-navy/40" />
-          <div className="mx-auto flex min-h-[520px] max-w-6xl flex-col justify-center px-4 py-16 sm:min-h-[600px] sm:py-24">
+          <div className="mx-auto flex min-h-[560px] max-w-6xl flex-col justify-center px-4 pb-28 pt-16 sm:min-h-[700px] sm:pb-36 sm:pt-24">
             <p className="w-fit rounded bg-brand px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider sm:text-xs">
               Офіційний представник Shanghai JEVOL в Україні
             </p>
-            <h1 className="mt-6 max-w-2xl text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl">
+            <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl">
               Точність, якій довіряють технічний контроль
             </h1>
             <p className="mt-5 max-w-lg text-lg text-slate-200 sm:text-xl">
@@ -406,12 +414,22 @@ export default function Home() {
                 Отримати консультацію
               </a>
             </div>
+            <ul className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-slate-200">
+              {["ДСТУ 3649", "ДСТУ 3333", "ISO/IEC 17025:2019"].map((t) => (
+                <li
+                  key={t}
+                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1.5 backdrop-blur"
+                >
+                  {t}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         {/* 3. Advantages strip */}
-        <section aria-label="Ключові переваги" className="border-b border-rule bg-mist">
-          <ul className="mx-auto grid max-w-6xl gap-6 px-4 py-7 sm:grid-cols-3 sm:gap-0">
+        <section aria-label="Ключові переваги" className="relative z-10 -mt-16 px-4 sm:-mt-20">
+          <ul className="mx-auto grid max-w-6xl gap-6 rounded-xl border border-rule bg-white p-6 shadow-2xl shadow-navy/20 sm:grid-cols-3 sm:gap-0 sm:p-8">
             {advantages.map((a, i) => (
               <li
                 key={a.label}
@@ -420,7 +438,7 @@ export default function Home() {
                 }`}
               >
                 <Icon name={a.icon} />
-                <span className="text-base font-bold leading-snug sm:text-lg">
+                <span className="text-base font-extrabold leading-snug sm:text-lg">
                   {a.label}
                 </span>
               </li>
@@ -432,9 +450,15 @@ export default function Home() {
         <section id="categories" className="scroll-mt-20 bg-white">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
             <div className="reveal flex items-end justify-between gap-6">
-              <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Обладнання JEVOL
-              </h2>
+              <div>
+                <p className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-brand">
+                  <span aria-hidden className="h-0.5 w-8 bg-brand" />
+                  Каталог
+                </p>
+                <h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl">
+                  Обладнання JEVOL
+                </h2>
+              </div>
               <span aria-hidden className="mb-2 hidden h-px flex-1 bg-brand/60 sm:block" />
               <Link
                 href="/#categories"
@@ -448,30 +472,31 @@ export default function Home() {
                 <Link
                   key={cat.href}
                   href={cat.href}
-                  className="reveal group flex flex-col overflow-hidden rounded-lg border border-rule bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                  className="reveal group flex flex-col overflow-hidden rounded-xl bg-navy shadow-md transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                 >
-                  <div className="relative aspect-[4/3] bg-navy">
+                  <div className="relative aspect-[4/5] bg-navy sm:aspect-[4/4.4]">
                     <Image
                       src={storageUrl("images", `${cat.imageFolder}/${cat.imagePath}`)}
                       alt={cat.name}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none"
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
-                  </div>
-                  <div className="flex items-center justify-between gap-3 bg-navy px-5 py-4 text-white">
-                    <div>
-                      <h3 className="font-extrabold leading-snug">{cat.name}</h3>
-                      <p className="mt-0.5 text-sm text-slate-300">
-                        {categoryBlurbs[cat.href]}
-                      </p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-white">
+                      <div>
+                        <h3 className="text-xl font-extrabold leading-snug">{cat.name}</h3>
+                        <p className="mt-1 text-sm text-slate-200">
+                          {categoryBlurbs[cat.href]}
+                        </p>
+                      </div>
+                      <span
+                        aria-hidden
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand text-lg transition-transform group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
                     </div>
-                    <span
-                      aria-hidden
-                      className="shrink-0 text-xl transition-transform group-hover:translate-x-1"
-                    >
-                      →
-                    </span>
                   </div>
                 </Link>
               ))}
@@ -483,7 +508,7 @@ export default function Home() {
         <section id="complex" className="scroll-mt-20 bg-mist">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[1fr_1.15fr]">
             <div className="reveal">
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+              <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
                 Комплексне оснащення лабораторій технічного контролю
               </h2>
               <p className="mt-4 max-w-lg text-slate-600">
@@ -505,14 +530,23 @@ export default function Home() {
                 Дізнатися більше <span aria-hidden>→</span>
               </a>
             </div>
-            <div className="reveal relative aspect-[4/3] overflow-hidden rounded-lg bg-navy shadow-lg">
-              <Image
-                src={COMPLEX_PHOTO.src}
-                alt={COMPLEX_PHOTO.alt}
-                fill
-                sizes="(min-width: 1024px) 55vw, 100vw"
-                className="object-cover"
-              />
+            <div className="reveal relative">
+              <div aria-hidden className="absolute -bottom-4 -right-4 hidden h-full w-full rounded-xl bg-brand/15 sm:block" />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-navy shadow-xl">
+                <Image
+                  src={COMPLEX_PHOTO.src}
+                  alt={COMPLEX_PHOTO.alt}
+                  fill
+                  sizes="(min-width: 1024px) 55vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-5 left-4 rounded-lg bg-brand px-5 py-3 text-white shadow-xl sm:left-6">
+                <p className="text-3xl font-extrabold leading-none">100+</p>
+                <p className="mt-1 text-xs font-semibold text-blue-100">
+                  лабораторій оснащено
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -520,16 +554,24 @@ export default function Home() {
         {/* 6. Why JEVOL */}
         <section id="service" className="scroll-mt-20 bg-white">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <p className="reveal mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-brand">
+              <span aria-hidden className="h-0.5 w-8 bg-brand" />
+              Переваги
+            </p>
+            <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-5xl">
               Чому обирають JEVOL
             </h2>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {whyCards.map((c) => (
                 <div
                   key={c.title}
-                  className="reveal rounded-lg border border-rule bg-white p-6 shadow-sm"
+                  className="reveal rounded-xl border border-rule bg-white p-6 shadow-sm transition-shadow hover:shadow-xl"
                 >
-                  <div className="mb-4 h-1 w-10 rounded bg-brand" />
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand/10 text-brand">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden className="h-6 w-6">
+                      <path d={whyIcons[whyCards.indexOf(c)]} />
+                    </svg>
+                  </div>
                   <h3 className="text-lg font-extrabold leading-snug">{c.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">
                     {c.item.text}
@@ -551,7 +593,7 @@ export default function Home() {
         {/* 7. Objects */}
         <section id="objects" className="scroll-mt-20 bg-mist">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-5xl">
               Наші об&apos;єкти
             </h2>
             <p className="reveal mt-3 max-w-2xl text-slate-600">
@@ -571,7 +613,7 @@ export default function Home() {
         {/* Equipment details (all verified feature texts) */}
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-5xl">
               Можливості обладнання
             </h2>
             <div className="reveal mt-8">
@@ -581,9 +623,11 @@ export default function Home() {
         </section>
 
         {/* 8. Software */}
-        <section id="software" className="scroll-mt-20 bg-navy text-white">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="reveal max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+        <section id="software" className="relative scroll-mt-20 overflow-hidden bg-navy text-white">
+          <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-brand/30 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-52 -left-40 h-[420px] w-[420px] rounded-full bg-brand/20 blur-3xl" />
+          <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
+            <h2 className="reveal max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
               Єдина система — єдиний протокол випробувань
             </h2>
             <p className="reveal mt-4 max-w-2xl text-slate-300">
@@ -592,13 +636,13 @@ export default function Home() {
             <ol className="reveal mt-12 grid gap-8 md:grid-cols-5 md:gap-0">
               {protocolSteps.map((st, i) => (
                 <li key={st.title} className="relative md:pr-5">
-                  <span className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-brand bg-navy text-sm font-bold text-white">
+                  <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand text-base font-extrabold text-white shadow-lg shadow-brand/40">
                     {i + 1}
                   </span>
                   {i < protocolSteps.length - 1 && (
                     <span
                       aria-hidden
-                      className="absolute left-9 top-[18px] hidden h-px w-[calc(100%-2.25rem)] bg-white/15 md:block"
+                      className="absolute left-11 top-[22px] hidden h-px w-[calc(100%-2.75rem)] bg-gradient-to-r from-brand to-white/10 md:block"
                     />
                   )}
                   <h3 className="mt-4 font-bold">{st.title}</h3>
