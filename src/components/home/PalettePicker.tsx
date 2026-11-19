@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 // TEMPORARY: lets the owner try palettes on the homepage. Remove once a
 // palette is chosen (then move its values into the default @theme block).
 const PALETTES = [
+  { id: "dark-steel", label: "Темний, сталевий синій", color: "#3a76c4" },
+  { id: "dark-brick", label: "Темний, цегляний", color: "#b45a4e" },
+  { id: "dark-bronze", label: "Темний, бронза", color: "#a8763f" },
+  { id: "dark-mono", label: "Темний, монохром", color: "#5b6b7d" },
   { id: "blue", label: "Синій з макета (яскравий)", color: "#1f5fd0" },
   { id: "slate-blue", label: "Приглушений синій", color: "#3d6a9e" },
   { id: "graphite-brick", label: "Графіт і цегла", color: "#a8483e" },
@@ -18,15 +22,14 @@ const PALETTES = [
 const KEY = "jevol-palette";
 
 export function PalettePicker() {
-  const [active, setActive] = useState("blue");
+  const [active, setActive] = useState("dark-steel");
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem(KEY);
-      if (saved && PALETTES.some((p) => p.id === saved)) {
-        setActive(saved);
-        document.documentElement.dataset.palette = saved;
-      }
+      const start = saved && PALETTES.some((p) => p.id === saved) ? saved : "dark-steel";
+      setActive(start);
+      document.documentElement.dataset.palette = start;
     } catch {}
   }, []);
 

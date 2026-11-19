@@ -65,7 +65,7 @@ export function HomeHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-rule bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-rule bg-surface/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-[68px]">
         <Link
           href="/"
@@ -78,13 +78,21 @@ export function HomeHeader() {
             width={285}
             height={97}
             priority
-            className="h-9 w-auto sm:h-10"
+            className="logo-on-light h-9 w-auto sm:h-10"
+          />
+          <Image
+            src="/logo-jevol-light.png"
+            alt=""
+            aria-hidden
+            width={285}
+            height={97}
+            className="logo-on-dark h-9 w-auto sm:h-10"
           />
         </Link>
 
         <nav
           aria-label="Основне меню"
-          className="hidden items-center gap-7 text-sm font-semibold text-navy lg:flex"
+          className="hidden items-center gap-7 text-sm font-semibold text-ink lg:flex"
         >
           <div
             ref={dropRef}
@@ -109,7 +117,7 @@ export function HomeHeader() {
                   : "invisible -translate-y-1 opacity-0"
               }`}
             >
-              <div className="rounded-lg border border-rule bg-white py-2 shadow-xl">
+              <div className="rounded-lg border border-rule bg-surface py-2 shadow-xl">
                 <Link
                   href="/#categories"
                   onClick={closeAll}
@@ -169,7 +177,7 @@ export function HomeHeader() {
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Закрити меню" : "Відкрити меню"}
             onClick={() => setMenuOpen((v) => !v)}
-            className="flex h-11 w-11 items-center justify-center text-navy lg:hidden"
+            className="flex h-11 w-11 items-center justify-center text-ink lg:hidden"
           >
             <svg
               viewBox="0 0 24 24"
@@ -191,8 +199,8 @@ export function HomeHeader() {
       </div>
 
       {menuOpen && (
-        <div className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-rule bg-white lg:hidden">
-          <nav aria-label="Мобільне меню" className="mx-auto flex max-w-6xl flex-col px-4 py-2 text-base font-semibold text-navy">
+        <div className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-rule bg-surface lg:hidden">
+          <nav aria-label="Мобільне меню" className="mx-auto flex max-w-6xl flex-col px-4 py-2 text-base font-semibold text-ink">
             <p className="pt-3 text-xs font-bold uppercase tracking-wider text-neutral-500">
               Обладнання
             </p>
@@ -201,7 +209,7 @@ export function HomeHeader() {
                 key={c.href}
                 href={c.href}
                 onClick={closeAll}
-                className="flex min-h-11 items-center py-2 text-[15px] font-medium text-slate-700"
+                className="flex min-h-11 items-center py-2 text-[15px] font-medium text-muted"
               >
                 {c.name}
               </Link>

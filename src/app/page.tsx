@@ -371,7 +371,7 @@ function Check() {
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col bg-white font-[family-name:var(--font-manrope)] text-navy">
+    <div className="flex flex-1 flex-col bg-surface font-[family-name:var(--font-manrope)] text-ink">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -430,7 +430,7 @@ export default function Home() {
 
         {/* 3. Advantages strip */}
         <section aria-label="Ключові переваги" className="relative z-10 -mt-16 px-4 sm:-mt-20">
-          <ul className="mx-auto grid max-w-6xl gap-6 rounded-xl border border-rule bg-white p-6 shadow-2xl shadow-navy/20 sm:grid-cols-3 sm:gap-0 sm:p-8">
+          <ul className="mx-auto grid max-w-6xl gap-6 rounded-xl border border-rule bg-surface p-6 shadow-2xl shadow-navy/20 sm:grid-cols-3 sm:gap-0 sm:p-8">
             {advantages.map((a, i) => (
               <li
                 key={a.label}
@@ -448,11 +448,11 @@ export default function Home() {
         </section>
 
         {/* 4. Catalog */}
-        <section id="categories" className="scroll-mt-20 bg-white">
+        <section id="categories" className="scroll-mt-20 bg-surface">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
             <div className="reveal flex items-end justify-between gap-6">
               <div>
-                <p className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-brand">
+                <p className="mb-3 flex items-center gap-3 tech text-xs font-bold uppercase tracking-[0.18em] text-brand">
                   <span aria-hidden className="h-0.5 w-8 bg-brand" />
                   Каталог
                 </p>
@@ -512,7 +512,7 @@ export default function Home() {
               <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
                 Комплексне оснащення лабораторій технічного контролю
               </h2>
-              <p className="mt-4 max-w-lg text-slate-600">
+              <p className="mt-4 max-w-lg text-muted">
                 Від підбору обладнання до монтажу та навчання персоналу.
                 Створюємо сучасні лінії технічного контролю під ключ.
               </p>
@@ -553,9 +553,9 @@ export default function Home() {
         </section>
 
         {/* 6. Why JEVOL */}
-        <section id="service" className="scroll-mt-20 bg-white">
+        <section id="service" className="scroll-mt-20 bg-surface">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <p className="reveal mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-brand">
+            <p className="reveal mb-3 flex items-center gap-3 tech text-xs font-bold uppercase tracking-[0.18em] text-brand">
               <span aria-hidden className="h-0.5 w-8 bg-brand" />
               Переваги
             </p>
@@ -566,7 +566,7 @@ export default function Home() {
               {whyCards.map((c) => (
                 <div
                   key={c.title}
-                  className="reveal rounded-xl border border-rule bg-white p-6 shadow-sm transition-shadow hover:shadow-xl"
+                  className="reveal rounded-xl border border-rule bg-surface p-6 shadow-sm transition-shadow hover:shadow-xl"
                 >
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand/10 text-brand">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden className="h-6 w-6">
@@ -574,7 +574,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-extrabold leading-snug">{c.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
                     {c.item.text}
                   </p>
                 </div>
@@ -584,7 +584,7 @@ export default function Home() {
               {[trustItems[3], trustItems[5]].map((t) => (
                 <div key={t.title}>
                   <h3 className="font-extrabold">{t.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{t.text}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{t.text}</p>
                 </div>
               ))}
             </div>
@@ -597,7 +597,7 @@ export default function Home() {
             <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-5xl">
               Наші об&apos;єкти
             </h2>
-            <p className="reveal mt-3 max-w-2xl text-slate-600">
+            <p className="reveal mt-3 max-w-2xl text-muted">
               Реальні установки JEVOL: лабораторії техогляду, монтаж стендів та
               виставкові стенди.
             </p>
@@ -612,7 +612,7 @@ export default function Home() {
         </section>
 
         {/* Equipment details (all verified feature texts) */}
-        <section className="bg-white">
+        <section className="bg-surface">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
             <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-5xl">
               Можливості обладнання

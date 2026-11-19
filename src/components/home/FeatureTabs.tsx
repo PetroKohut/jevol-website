@@ -33,7 +33,7 @@ export function FeatureTabs({ groups }: { groups: Group[] }) {
               className={`min-h-11 rounded-md border px-5 text-sm font-bold transition-colors ${
                 on
                   ? "border-brand bg-brand text-white"
-                  : "border-rule bg-white text-navy hover:border-brand hover:text-brand"
+                  : "border-rule bg-surface text-ink hover:border-brand hover:text-brand"
               }`}
             >
               {g.label}
@@ -51,18 +51,18 @@ export function FeatureTabs({ groups }: { groups: Group[] }) {
           hidden={g.id !== active}
           className="mt-8"
         >
-          <h3 className="max-w-3xl text-2xl font-extrabold leading-tight text-navy sm:text-3xl">
+          <h3 className="max-w-3xl text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
             {g.title}
           </h3>
-          <p className="mt-3 max-w-2xl text-slate-600">{g.intro}</p>
+          <p className="mt-3 max-w-2xl text-muted">{g.intro}</p>
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {g.items.map((it) => (
               <div
                 key={it.title}
-                className="rounded-lg border border-rule bg-white p-6 shadow-sm"
+                className="rounded-lg border border-rule bg-surface p-6 shadow-sm"
               >
-                <h4 className="font-extrabold leading-snug text-navy">{it.title}</h4>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{it.text}</p>
+                <h4 className="font-extrabold leading-snug text-ink">{it.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{it.text}</p>
               </div>
             ))}
           </div>
