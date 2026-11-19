@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 // TEMPORARY: lets the owner try palettes on the homepage. Remove once a
 // palette is chosen (then move its values into the default @theme block).
 const PALETTES = [
-  { id: "blue", label: "Синій", color: "#1f5fd0" },
-  { id: "graphite-orange", label: "Графіт і помаранчевий", color: "#e85d00" },
-  { id: "graphite-red", label: "Графіт і червоний (як колесо в логотипі)", color: "#d62828" },
-  { id: "teal", label: "Бірюзовий", color: "#0e8a8f" },
-  { id: "green", label: "Зелений", color: "#1e7a4c" },
-  { id: "burgundy", label: "Бордовий", color: "#9b1b30" },
-  { id: "indigo", label: "Індиго", color: "#4338ca" },
-  { id: "steel", label: "Сталевий", color: "#35607f" },
-  { id: "copper", label: "Мідний", color: "#b4541a" },
+  { id: "blue", label: "Синій з макета (яскравий)", color: "#1f5fd0" },
+  { id: "slate-blue", label: "Приглушений синій", color: "#3d6a9e" },
+  { id: "graphite-brick", label: "Графіт і цегла", color: "#a8483e" },
+  { id: "forest", label: "Темно-зелений", color: "#3e7a63" },
+  { id: "petrol", label: "Морська хвиля", color: "#2f7384" },
+  { id: "bronze", label: "Графіт і бронза", color: "#a06f3c" },
+  { id: "olive", label: "Оливковий", color: "#5f6e36" },
+  { id: "mono", label: "Монохром, сталевий", color: "#3a4756" },
+  { id: "wine", label: "Приглушене бордо", color: "#8a3b4a" },
 ];
 const KEY = "jevol-palette";
 
