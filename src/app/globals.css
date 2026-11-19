@@ -42,8 +42,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Homepage only: smooth anchors + scroll-in slide (content is never hidden; progressive enhancement:
-   browsers without scroll-driven animations just show the content). */
+/* Homepage motion. CSS only, desktop only, transform/opacity only (no layout
+   work, no JS). Disabled for reduced-motion. Content is never left hidden:
+   browsers without scroll-driven animations simply show the static page. */
 html {
   scroll-behavior: smooth;
 }
@@ -52,20 +53,78 @@ html {
     scroll-behavior: auto;
   }
 }
-@keyframes reveal-in {
+
+@keyframes hero-in {
   from {
-    transform: translateY(16px);
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hero-photo-in {
+  from {
+    transform: translateX(28px) scale(0.985);
   }
   to {
     transform: none;
   }
 }
+@keyframes reveal-in {
+  from {
+    opacity: 0.35;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes line-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+  /* Hero: staggered text on load, photo slides in (no opacity on the LCP image). */
+  .hero-in {
+    animation: hero-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero-in-2 { animation-delay: 0.08s; }
+  .hero-in-3 { animation-delay: 0.16s; }
+  .hero-in-4 { animation-delay: 0.24s; }
+  .hero-photo {
+    animation: hero-photo-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  /* Buttons lift slightly on hover. */
+  .btn-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+  .btn-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -8px rgb(0 0 0 / 0.45);
+  }
+}
+
 @supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
     .reveal {
       animation: reveal-in linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 35%;
+      animation-range: entry 0% entry 40%;
+    }
+    .step-line {
+      transform-origin: left;
+      animation: line-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 45%;
     }
   }
 }

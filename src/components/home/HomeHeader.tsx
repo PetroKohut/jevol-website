@@ -147,7 +147,7 @@ export function HomeHeader() {
         <div className="flex items-center gap-2">
           <Link
             href="/#contact"
-            className="hidden h-11 items-center gap-2 rounded-md bg-brand px-5 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark sm:inline-flex"
+            className="btn-lift hidden h-11 items-center gap-2 rounded-md bg-brand px-5 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark sm:inline-flex"
           >
             <svg
               viewBox="0 0 24 24"

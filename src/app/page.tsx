@@ -382,33 +382,33 @@ export default function Home() {
         <section className="relative bg-navy text-white">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-28 pt-12 sm:pt-16 lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:pb-36 lg:pt-20">
             <div>
-              <p className="w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
+              <p className="hero-in w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
                 Офіційний представник JEVOL в Україні
               </p>
-              <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[2.85rem]">
+              <h1 className="hero-in hero-in-2 mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[2.85rem]">
                 Сучасне високоточне обладнання для діагностики транспортних
                 засобів
               </h1>
-              <p className="mt-5 max-w-lg text-lg text-slate-300 sm:text-xl">
+              <p className="hero-in hero-in-3 mt-5 max-w-lg text-lg text-slate-300 sm:text-xl">
                 Гальмівні стенди, детектор люфтів, газоаналізатор, димомір,
                 реглоскоп та додаткове обладнання для техогляду.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="hero-in hero-in-4 mt-8 flex flex-wrap gap-3">
                 <a
                   href="https://wa.me/380504709561"
-                  className="inline-flex h-12 items-center rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
+                  className="btn-lift inline-flex h-12 items-center rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
                 >
                   Написати нам у WhatsApp
                 </a>
                 <a
                   href="#categories"
-                  className="inline-flex h-12 items-center rounded-md border border-white/40 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
+                  className="btn-lift inline-flex h-12 items-center rounded-md border border-white/40 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
                 >
                   Переглянути прилади
                 </a>
               </div>
             </div>
-            <div className="relative">
+            <div className="hero-photo relative">
               <div
                 aria-hidden
                 className="absolute -bottom-3 -right-3 hidden h-full w-full rounded-xl border border-brand/50 sm:block"
@@ -525,7 +525,7 @@ export default function Home() {
               </ul>
               <a
                 href="#software"
-                className="mt-8 inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
+                className="mt-8 btn-lift inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
               >
                 Дізнатися більше <span aria-hidden>→</span>
               </a>
@@ -642,7 +642,7 @@ export default function Home() {
                   {i < protocolSteps.length - 1 && (
                     <span
                       aria-hidden
-                      className="absolute left-11 top-[22px] hidden h-px w-[calc(100%-2.75rem)] bg-gradient-to-r from-brand to-white/10 md:block"
+                      className="step-line absolute left-11 top-[22px] hidden h-px w-[calc(100%-2.75rem)] bg-gradient-to-r from-brand to-white/10 md:block"
                     />
                   )}
                   <h3 className="mt-4 font-bold">{st.title}</h3>
@@ -668,7 +668,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#contact"
-                className="inline-flex h-12 items-center gap-2 rounded-md bg-navy px-6 text-sm font-bold text-white transition-colors hover:bg-navy-2"
+                className="btn-lift inline-flex h-12 items-center gap-2 rounded-md bg-navy px-6 text-sm font-bold text-white transition-colors hover:bg-navy-2"
               >
                 Зв&apos;язатися з нами <span aria-hidden>→</span>
               </a>
