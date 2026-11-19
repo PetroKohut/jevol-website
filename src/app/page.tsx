@@ -6,7 +6,6 @@ import { HomeHeader } from "@/components/home/HomeHeader";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { ObjectsGallery } from "@/components/home/ObjectsGallery";
 import { FeatureTabs } from "@/components/home/FeatureTabs";
-import { PalettePicker } from "@/components/home/PalettePicker";
 import { categories } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
 
@@ -383,7 +382,7 @@ export default function Home() {
         <section className="relative bg-navy text-white">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-28 pt-12 sm:pt-16 lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:pb-36 lg:pt-20">
             <div>
-              <p className="brand-on-black w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
+              <p className="w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
                 Офіційний представник JEVOL в Україні
               </p>
               <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[2.85rem]">
@@ -397,7 +396,7 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="https://wa.me/380504709561"
-                  className="brand-on-black inline-flex h-12 items-center rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
+                  className="inline-flex h-12 items-center rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
                 >
                   Написати нам у WhatsApp
                 </a>
@@ -452,7 +451,7 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
             <div className="reveal flex items-end justify-between gap-6">
               <div>
-                <p className="mb-3 flex items-center gap-3 tech text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
+                <p className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
                   <span aria-hidden className="h-0.5 w-8 bg-brand" />
                   Каталог
                 </p>
@@ -493,7 +492,7 @@ export default function Home() {
                       </div>
                       <span
                         aria-hidden
-                        className="brand-on-black flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand text-lg text-on-brand transition-transform group-hover:translate-x-1"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand text-lg text-on-brand transition-transform group-hover:translate-x-1"
                       >
                         →
                       </span>
@@ -555,7 +554,7 @@ export default function Home() {
         {/* 6. Why JEVOL */}
         <section id="service" className="scroll-mt-20 bg-surface">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <p className="reveal mb-3 flex items-center gap-3 tech text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
+            <p className="reveal mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
               <span aria-hidden className="h-0.5 w-8 bg-brand" />
               Переваги
             </p>
@@ -637,7 +636,7 @@ export default function Home() {
             <ol className="reveal mt-12 grid gap-8 md:grid-cols-5 md:gap-0">
               {protocolSteps.map((st, i) => (
                 <li key={st.title} className="relative md:pr-5">
-                  <span className="brand-on-black relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand text-base font-extrabold text-on-brand shadow-lg shadow-brand/40">
+                  <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand text-base font-extrabold text-on-brand shadow-lg shadow-brand/40">
                     {i + 1}
                   </span>
                   {i < protocolSteps.length - 1 && (
@@ -689,7 +688,6 @@ export default function Home() {
       </main>
 
       <HomeFooter />
-      <PalettePicker />
     </div>
   );
 }

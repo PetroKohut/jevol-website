@@ -12,35 +12,21 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Homepage palette: black, white and warm gold (non-inline so a variant can override it). */
+/* Homepage palette: black, white and steel blue. */
 @theme {
   --color-surface: #ffffff;
-  --color-mist: #f6f3ec;
+  --color-mist: #f3f5f8;
   --color-ink: #111111;
-  --color-muted: #5c5850;
-  --color-rule: #e6e0d3;
+  --color-muted: #55595f;
+  --color-rule: #e2e5ea;
   --color-navy: #0d0d0d;
   --color-navy-2: #1a1a1a;
-  --color-brand: #b89b5e;
-  --color-brand-dark: #9c8048;
-  --color-brand-ink: #7a6232;
-  --color-on-brand: #14110b;
+  --color-brand: #3d6a9e;
+  --color-brand-dark: #2e5280;
+  --color-brand-ink: #2e5280;
+  --color-on-brand: #ffffff;
 }
 
-/* Black variant: dark surfaces, same gold. */
-html[data-palette="dark-gold"] {
-  --color-surface: #0d0d0d;
-  --color-mist: #141414;
-  --color-ink: #f4f1ea;
-  --color-muted: #a39d90;
-  --color-rule: #2a2822;
-  --color-navy: #050505;
-  --color-navy-2: #121212;
-  --color-brand: #c8a96a;
-  --color-brand-dark: #ad8f52;
-  --color-brand-ink: #c8a96a;
-  --color-on-brand: #111111;
-}
 
 
 @media (prefers-color-scheme: dark) {
@@ -82,117 +68,4 @@ html {
       animation-range: entry 0% entry 35%;
     }
   }
-}
-
-
-
-/* Logo: dark-on-light by default, light version on dark palettes. */
-.logo-on-dark { display: none; }
-html[data-palette^="dark"] .logo-on-light { display: none; }
-html[data-palette^="dark"] .logo-on-dark { display: block; }
-
-/* Technical look for small labels on dark palettes. */
-html[data-palette^="dark"] .tech {
-  font-family: var(--font-geist-mono), ui-monospace, Menlo, Consolas, monospace;
-  letter-spacing: 0.14em;
-}
-
-/* Homepage contact form on dark palettes: restyle without touching the shared
-   form component (the /contact page keeps its own look). */
-html[data-palette^="dark"] #contact section { background: var(--color-surface); }
-html[data-palette^="dark"] #contact h2 { color: var(--color-ink); }
-html[data-palette^="dark"] #contact p,
-html[data-palette^="dark"] #contact label { color: var(--color-muted); }
-html[data-palette^="dark"] #contact input:not([type="checkbox"]),
-html[data-palette^="dark"] #contact textarea {
-  background: var(--color-mist);
-  border-color: var(--color-rule);
-  color: var(--color-ink);
-}
-html[data-palette^="dark"] #contact input:focus,
-html[data-palette^="dark"] #contact textarea:focus { border-color: var(--color-brand); }
-html[data-palette^="dark"] #contact button[type="submit"] {
-  background: var(--color-brand);
-  color: #fff;
-}
-html[data-palette^="dark"] #contact button[type="submit"]:hover { background: var(--color-brand-dark); }
-
-/* Accent colour options (independent of the light/dark style). */
-html[data-accent="red"] {
-  --color-brand: #b23a3a;
-  --color-brand-dark: #8f2c2c;
-  --color-brand-ink: #9a2e2e;
-  --color-on-brand: #ffffff;
-}
-html[data-palette="dark-gold"][data-accent="red"] {
-  --color-brand: #c9524f;
-  --color-brand-dark: #ad3f3c;
-  --color-brand-ink: #d96a67;
-  --color-on-brand: #ffffff;
-}
-html[data-accent="blue"] {
-  --color-brand: #3d6a9e;
-  --color-brand-dark: #2e5280;
-  --color-brand-ink: #2e5280;
-  --color-on-brand: #ffffff;
-}
-html[data-palette="dark-gold"][data-accent="blue"] {
-  --color-brand: #5b8cc4;
-  --color-brand-dark: #4673a8;
-  --color-brand-ink: #7aa6dc;
-  --color-on-brand: #ffffff;
-}
-html[data-accent="silver"] {
-  --color-brand: #9aa3ae;
-  --color-brand-dark: #7d8793;
-  --color-brand-ink: #4a5560;
-  --color-on-brand: #111111;
-}
-html[data-palette="dark-gold"][data-accent="silver"] {
-  --color-brand: #b4bcc6;
-  --color-brand-dark: #9aa3ae;
-  --color-brand-ink: #b4bcc6;
-  --color-on-brand: #111111;
-}
-html[data-accent="copper"] {
-  --color-brand: #a9582d;
-  --color-brand-dark: #8a4522;
-  --color-brand-ink: #8e4521;
-  --color-on-brand: #ffffff;
-}
-html[data-palette="dark-gold"][data-accent="copper"] {
-  --color-brand: #c77a4e;
-  --color-brand-dark: #ab6238;
-  --color-brand-ink: #d9936a;
-  --color-on-brand: #ffffff;
-}
-html[data-accent="green"] {
-  --color-brand: #2f6f55;
-  --color-brand-dark: #245a45;
-  --color-brand-ink: #25594a;
-  --color-on-brand: #ffffff;
-}
-html[data-palette="dark-gold"][data-accent="green"] {
-  --color-brand: #4e9a7b;
-  --color-brand-dark: #3c8265;
-  --color-brand-ink: #66b596;
-  --color-on-brand: #ffffff;
-}
-html[data-accent="mono"] {
-  --color-brand: #111111;
-  --color-brand-dark: #333333;
-  --color-brand-ink: #111111;
-  --color-on-brand: #ffffff;
-}
-html[data-palette="dark-gold"][data-accent="mono"] {
-  --color-brand: #f4f1ea;
-  --color-brand-dark: #d9d5cb;
-  --color-brand-ink: #f4f1ea;
-  --color-on-brand: #111111;
-}
-
-/* Black-accent option on the light style: elements that sit on black sections turn white. */
-html[data-accent="mono"]:not([data-palette]) .brand-on-black {
-  background-color: #f4f1ea;
-  color: #111111;
 }

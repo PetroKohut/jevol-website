@@ -78,16 +78,9 @@ export function HomeHeader() {
             width={285}
             height={97}
             priority
-            className="logo-on-light h-9 w-auto sm:h-10"
+            className="h-9 w-auto sm:h-10"
           />
-          <Image
-            src="/logo-jevol-light.png"
-            alt=""
-            aria-hidden
-            width={285}
-            height={97}
-            className="logo-on-dark h-9 w-auto sm:h-10"
-          />
+
         </Link>
 
         <nav
