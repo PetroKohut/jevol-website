@@ -105,7 +105,7 @@ export function HomeHeader() {
               aria-haspopup="true"
               aria-expanded={catOpen}
               onClick={() => setCatOpen((v) => !v)}
-              className="flex items-center gap-1 py-2 transition-colors hover:text-brand"
+              className="flex items-center gap-1 py-2 transition-colors hover:text-brand-ink"
             >
               Обладнання
               <Chevron open={catOpen} />
@@ -122,7 +122,7 @@ export function HomeHeader() {
                   href="/#categories"
                   onClick={closeAll}
                   tabIndex={catOpen ? 0 : -1}
-                  className="block border-b border-rule px-4 py-2.5 text-sm font-bold text-brand hover:bg-mist"
+                  className="block border-b border-rule px-4 py-2.5 text-sm font-bold text-brand-ink hover:bg-mist"
                 >
                   Усі прилади
                 </Link>
@@ -132,7 +132,7 @@ export function HomeHeader() {
                     href={c.href}
                     onClick={closeAll}
                     tabIndex={catOpen ? 0 : -1}
-                    className="block px-4 py-2.5 text-sm hover:bg-mist hover:text-brand"
+                    className="block px-4 py-2.5 text-sm hover:bg-mist hover:text-brand-ink"
                   >
                     {c.name}
                   </Link>
@@ -144,7 +144,7 @@ export function HomeHeader() {
             <Link
               key={n.href}
               href={n.href}
-              className="py-2 transition-colors hover:text-brand"
+              className="py-2 transition-colors hover:text-brand-ink"
             >
               {n.label}
             </Link>
@@ -154,7 +154,7 @@ export function HomeHeader() {
         <div className="flex items-center gap-2">
           <Link
             href="/#contact"
-            className="hidden h-11 items-center gap-2 rounded-md bg-brand px-5 text-sm font-bold text-white transition-colors hover:bg-brand-dark sm:inline-flex"
+            className="hidden h-11 items-center gap-2 rounded-md bg-brand px-5 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark sm:inline-flex"
           >
             <svg
               viewBox="0 0 24 24"
@@ -228,7 +228,7 @@ export function HomeHeader() {
             <Link
               href="/#contact"
               onClick={closeAll}
-              className="mb-4 mt-2 inline-flex h-12 items-center justify-center rounded-md bg-brand text-sm font-bold text-white"
+              className="mb-4 mt-2 inline-flex h-12 items-center justify-center rounded-md bg-brand text-sm font-bold text-on-brand"
             >
               Отримати консультацію
             </Link>

@@ -326,7 +326,7 @@ function Icon({ name }: { name: "lab" | "map" | "wrench" }) {
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
     "aria-hidden": true,
-    className: "h-9 w-9 shrink-0 text-brand",
+    className: "h-9 w-9 shrink-0 text-brand-ink",
   };
   if (name === "lab")
     return (
@@ -362,7 +362,7 @@ function Check() {
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden
-      className="mt-0.5 h-5 w-5 shrink-0 text-brand"
+      className="mt-0.5 h-5 w-5 shrink-0 text-brand-ink"
     >
       <path d="m5 12 5 5 9-10" />
     </svg>
@@ -391,7 +391,7 @@ export default function Home() {
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/80 to-navy/10 max-md:bg-gradient-to-b max-md:from-navy/90 max-md:via-navy/70 max-md:to-navy/40" />
           <div className="mx-auto flex min-h-[560px] max-w-6xl flex-col justify-center px-4 pb-28 pt-16 sm:min-h-[700px] sm:pb-36 sm:pt-24">
-            <p className="w-fit rounded bg-brand px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider sm:text-xs">
+            <p className="w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
               Офіційний представник Shanghai JEVOL в Україні
             </p>
             <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl">
@@ -404,7 +404,7 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#categories"
-                className="inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-white transition-colors hover:bg-brand-dark"
+                className="inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
               >
                 Переглянути обладнання <span aria-hidden>→</span>
               </a>
@@ -452,7 +452,7 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
             <div className="reveal flex items-end justify-between gap-6">
               <div>
-                <p className="mb-3 flex items-center gap-3 tech text-xs font-bold uppercase tracking-[0.18em] text-brand">
+                <p className="mb-3 flex items-center gap-3 tech text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
                   <span aria-hidden className="h-0.5 w-8 bg-brand" />
                   Каталог
                 </p>
@@ -463,7 +463,7 @@ export default function Home() {
               <span aria-hidden className="mb-2 hidden h-px flex-1 bg-brand/60 sm:block" />
               <Link
                 href="/#categories"
-                className="mb-1 shrink-0 text-sm font-bold text-brand hover:underline"
+                className="mb-1 shrink-0 text-sm font-bold text-brand-ink hover:underline"
               >
                 Весь каталог →
               </Link>
@@ -493,7 +493,7 @@ export default function Home() {
                       </div>
                       <span
                         aria-hidden
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand text-lg transition-transform group-hover:translate-x-1"
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand text-lg text-on-brand transition-transform group-hover:translate-x-1"
                       >
                         →
                       </span>
@@ -526,7 +526,7 @@ export default function Home() {
               </ul>
               <a
                 href="#software"
-                className="mt-8 inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-white transition-colors hover:bg-brand-dark"
+                className="mt-8 inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
               >
                 Дізнатися більше <span aria-hidden>→</span>
               </a>
@@ -542,9 +542,9 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -bottom-5 left-4 rounded-lg bg-brand px-5 py-3 text-white shadow-xl sm:left-6">
+              <div className="absolute -bottom-5 left-4 rounded-lg bg-brand px-5 py-3 text-on-brand shadow-xl sm:left-6">
                 <p className="text-3xl font-extrabold leading-none">100+</p>
-                <p className="mt-1 text-xs font-semibold text-blue-100">
+                <p className="mt-1 text-xs font-semibold text-on-brand/80">
                   лабораторій оснащено
                 </p>
               </div>
@@ -555,7 +555,7 @@ export default function Home() {
         {/* 6. Why JEVOL */}
         <section id="service" className="scroll-mt-20 bg-surface">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <p className="reveal mb-3 flex items-center gap-3 tech text-xs font-bold uppercase tracking-[0.18em] text-brand">
+            <p className="reveal mb-3 flex items-center gap-3 tech text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
               <span aria-hidden className="h-0.5 w-8 bg-brand" />
               Переваги
             </p>
@@ -568,7 +568,7 @@ export default function Home() {
                   key={c.title}
                   className="reveal rounded-xl border border-rule bg-surface p-6 shadow-sm transition-shadow hover:shadow-xl"
                 >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand/10 text-brand">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand/15 text-brand-ink">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden className="h-6 w-6">
                       <path d={whyIcons[whyCards.indexOf(c)]} />
                     </svg>
@@ -637,7 +637,7 @@ export default function Home() {
             <ol className="reveal mt-12 grid gap-8 md:grid-cols-5 md:gap-0">
               {protocolSteps.map((st, i) => (
                 <li key={st.title} className="relative md:pr-5">
-                  <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand text-base font-extrabold text-white shadow-lg shadow-brand/40">
+                  <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand text-base font-extrabold text-on-brand shadow-lg shadow-brand/40">
                     {i + 1}
                   </span>
                   {i < protocolSteps.length - 1 && (
@@ -655,13 +655,13 @@ export default function Home() {
         </section>
 
         {/* 9. CTA */}
-        <section className="bg-brand text-white">
+        <section className="bg-brand text-on-brand">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 md:flex-row md:items-center">
             <div className="max-w-2xl">
               <h2 className="text-2xl font-extrabold leading-tight sm:text-3xl">
                 Потрібна консультація щодо оснащення лабораторії?
               </h2>
-              <p className="mt-2 text-blue-100">
+              <p className="mt-2 text-on-brand/80">
                 Наші спеціалісти допоможуть підібрати оптимальне обладнання для
                 ваших завдань.
               </p>
@@ -669,7 +669,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#contact"
-                className="inline-flex h-12 items-center gap-2 rounded-md bg-white px-6 text-sm font-bold text-brand transition-colors hover:bg-blue-50"
+                className="inline-flex h-12 items-center gap-2 rounded-md bg-navy px-6 text-sm font-bold text-white transition-colors hover:bg-navy-2"
               >
                 Зв&apos;язатися з нами <span aria-hidden>→</span>
               </a>

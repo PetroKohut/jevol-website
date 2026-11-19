@@ -32,8 +32,8 @@ export function FeatureTabs({ groups }: { groups: Group[] }) {
               onClick={() => setActive(g.id)}
               className={`min-h-11 rounded-md border px-5 text-sm font-bold transition-colors ${
                 on
-                  ? "border-brand bg-brand text-white"
-                  : "border-rule bg-surface text-ink hover:border-brand hover:text-brand"
+                  ? "border-brand bg-brand text-on-brand"
+                  : "border-rule bg-surface text-ink hover:border-brand hover:text-brand-ink"
               }`}
             >
               {g.label}
