@@ -379,52 +379,61 @@ export default function Home() {
       <HomeHeader />
 
       <main className="flex-1">
-        {/* 2. Hero */}
-        <section className="relative isolate overflow-hidden bg-navy text-white">
-          <Image
-            src={HERO_PHOTO.src}
-            alt={HERO_PHOTO.alt}
-            fill
-            priority
-            sizes="100vw"
-            className="-z-20 object-cover object-[70%_center]"
-          />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/80 to-navy/10 max-md:bg-gradient-to-b max-md:from-navy/90 max-md:via-navy/70 max-md:to-navy/40" />
-          <div className="mx-auto flex min-h-[560px] max-w-6xl flex-col justify-center px-4 pb-28 pt-16 sm:min-h-[700px] sm:pb-36 sm:pt-24">
-            <p className="w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
-              Офіційний представник Shanghai JEVOL в Україні
-            </p>
-            <h1 className="mt-6 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-7xl">
-              Точність, якій довіряють технічний контроль
-            </h1>
-            <p className="mt-5 max-w-lg text-lg text-slate-200 sm:text-xl">
-              Обладнання для випробувальних лабораторій та технічного контролю
-              транспортних засобів.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#categories"
-                className="inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
-              >
-                Переглянути обладнання <span aria-hidden>→</span>
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex h-12 items-center rounded-md border border-white/70 px-6 text-sm font-bold text-white transition-colors hover:bg-white hover:text-navy"
-              >
-                Отримати консультацію
-              </a>
-            </div>
-            <ul className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-slate-200">
-              {["ДСТУ 3649", "ДСТУ 3333", "ISO/IEC 17025:2019"].map((t) => (
-                <li
-                  key={t}
-                  className="rounded-full border border-white/25 bg-white/10 px-3 py-1.5 backdrop-blur"
+        {/* 2. Hero: text on solid black, photo in its own frame (no overlay) */}
+        <section className="relative bg-navy text-white">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-28 pt-12 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-12 lg:pb-36 lg:pt-20">
+            <div>
+              <p className="w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
+                Офіційний представник Shanghai JEVOL в Україні
+              </p>
+              <h1 className="mt-6 text-4xl font-extrabold leading-[1.06] tracking-tight sm:text-6xl">
+                Точність, якій довіряють технічний контроль
+              </h1>
+              <p className="mt-5 max-w-lg text-lg text-slate-300 sm:text-xl">
+                Обладнання для випробувальних лабораторій та технічного контролю
+                транспортних засобів.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="#categories"
+                  className="inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
                 >
-                  {t}
-                </li>
-              ))}
-            </ul>
+                  Переглянути обладнання <span aria-hidden>→</span>
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex h-12 items-center rounded-md border border-white/40 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
+                >
+                  Отримати консультацію
+                </a>
+              </div>
+              <ul className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-slate-300">
+                {["ДСТУ 3649", "ДСТУ 3333", "ISO/IEC 17025:2019"].map((t) => (
+                  <li
+                    key={t}
+                    className="rounded-full border border-white/20 bg-white/5 px-3 py-1.5"
+                  >
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative">
+              <div
+                aria-hidden
+                className="absolute -bottom-3 -right-3 hidden h-full w-full rounded-xl border border-brand/50 sm:block"
+              />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-navy-2 shadow-2xl">
+                <Image
+                  src={HERO_PHOTO.src}
+                  alt={HERO_PHOTO.alt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 48vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
