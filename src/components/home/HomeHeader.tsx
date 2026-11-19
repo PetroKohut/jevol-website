@@ -6,12 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { categories } from "@/lib/categories";
 
-const NAV = [
-  { label: "Комплексні рішення", href: "/#complex" },
-  { label: "Наші об'єкти", href: "/#objects" },
-  { label: "Сервіс", href: "/#service" },
-  { label: "Контакти", href: "/contact" },
-];
+const WHATSAPP = "https://wa.me/380504709561";
 
 function Chevron({ open }: { open: boolean }) {
   return (
@@ -87,6 +82,9 @@ export function HomeHeader() {
           aria-label="Основне меню"
           className="hidden items-center gap-7 text-sm font-semibold text-ink lg:flex"
         >
+          <Link href="/" className="py-2 transition-colors hover:text-brand-ink">
+            Головна
+          </Link>
           <div
             ref={dropRef}
             className="relative"
@@ -100,7 +98,7 @@ export function HomeHeader() {
               onClick={() => setCatOpen((v) => !v)}
               className="flex items-center gap-1 py-2 transition-colors hover:text-brand-ink"
             >
-              Обладнання
+              Прилади
               <Chevron open={catOpen} />
             </button>
             <div
@@ -133,37 +131,18 @@ export function HomeHeader() {
               </div>
             </div>
           </div>
-          {NAV.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className="py-2 transition-colors hover:text-brand-ink"
-            >
-              {n.label}
-            </Link>
-          ))}
+          <Link href="/contact" className="py-2 transition-colors hover:text-brand-ink">
+            Контакти
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            href="/#contact"
-            className="btn-lift hidden h-11 items-center gap-2 rounded-md bg-brand px-5 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark sm:inline-flex"
+          <a
+            href={WHATSAPP}
+            className="btn-lift inline-flex h-11 items-center rounded-md bg-brand px-5 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden
-              className="h-4 w-4"
-            >
-              <rect x="3" y="5" width="18" height="14" rx="2" />
-              <path d="m3 7 9 6 9-6" />
-            </svg>
-            Отримати консультацію
-          </Link>
+            WhatsApp
+          </a>
           <button
             type="button"
             aria-haspopup="true"
@@ -194,8 +173,15 @@ export function HomeHeader() {
       {menuOpen && (
         <div className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-rule bg-surface lg:hidden">
           <nav aria-label="Мобільне меню" className="mx-auto flex max-w-6xl flex-col px-4 py-2 text-base font-semibold text-ink">
+            <Link
+              href="/"
+              onClick={closeAll}
+              className="flex min-h-11 items-center py-2"
+            >
+              Головна
+            </Link>
             <p className="pt-3 text-xs font-bold uppercase tracking-wider text-neutral-500">
-              Обладнання
+              Прилади
             </p>
             {categories.map((c) => (
               <Link
@@ -208,22 +194,12 @@ export function HomeHeader() {
               </Link>
             ))}
             <div className="my-2 border-t border-rule" />
-            {NAV.map((n) => (
-              <Link
-                key={n.href}
-                href={n.href}
-                onClick={closeAll}
-                className="flex min-h-11 items-center py-2"
-              >
-                {n.label}
-              </Link>
-            ))}
             <Link
-              href="/#contact"
+              href="/contact"
               onClick={closeAll}
-              className="mb-4 mt-2 inline-flex h-12 items-center justify-center rounded-md bg-brand text-sm font-bold text-on-brand"
+              className="flex min-h-11 items-center py-2"
             >
-              Отримати консультацію
+              Контакти
             </Link>
           </nav>
         </div>

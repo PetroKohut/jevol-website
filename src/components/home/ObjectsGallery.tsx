@@ -65,9 +65,8 @@ export function ObjectsGallery({
           onClick={() => setOpen(0)}
           className="flex aspect-[4/3] flex-col items-center justify-center rounded-lg bg-navy p-4 text-center text-white transition-colors hover:bg-brand hover:text-on-brand"
         >
-          <span className="text-3xl font-extrabold">{photos.length}</span>
-          <span className="mt-1 text-sm font-semibold">
-            Переглянути всі фото
+          <span className="text-sm font-bold uppercase tracking-wide">
+            Переглянути всі фото ({photos.length})
           </span>
         </button>
       </div>
