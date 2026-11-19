@@ -21,10 +21,10 @@
   --color-rule: #e6e0d3;
   --color-navy: #0d0d0d;
   --color-navy-2: #1a1a1a;
-  --color-brand: #c9a24a;
-  --color-brand-dark: #ad8630;
-  --color-brand-ink: #8a6a1c;
-  --color-on-brand: #111111;
+  --color-brand: #b89b5e;
+  --color-brand-dark: #9c8048;
+  --color-brand-ink: #7a6232;
+  --color-on-brand: #14110b;
 }
 
 /* Black variant: dark surfaces, same gold. */
@@ -36,9 +36,9 @@ html[data-palette="dark-gold"] {
   --color-rule: #2a2822;
   --color-navy: #050505;
   --color-navy-2: #121212;
-  --color-brand: #d4af58;
-  --color-brand-dark: #b8923c;
-  --color-brand-ink: #d4af58;
+  --color-brand: #c8a96a;
+  --color-brand-dark: #ad8f52;
+  --color-brand-ink: #c8a96a;
   --color-on-brand: #111111;
 }
 

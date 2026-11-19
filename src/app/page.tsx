@@ -625,8 +625,8 @@ export default function Home() {
 
         {/* 8. Software */}
         <section id="software" className="relative scroll-mt-20 overflow-hidden bg-navy text-white">
-          <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-brand/30 blur-3xl" />
-          <div aria-hidden className="pointer-events-none absolute -bottom-52 -left-40 h-[420px] w-[420px] rounded-full bg-brand/20 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-white/[0.06] blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-52 -left-40 h-[420px] w-[420px] rounded-full bg-brand/10 blur-3xl" />
           <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
             <h2 className="reveal max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
               Єдина система — єдиний протокол випробувань
@@ -655,13 +655,13 @@ export default function Home() {
         </section>
 
         {/* 9. CTA */}
-        <section className="bg-brand text-on-brand">
+        <section className="border-t-2 border-brand bg-mist text-ink">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 md:flex-row md:items-center">
             <div className="max-w-2xl">
               <h2 className="text-2xl font-extrabold leading-tight sm:text-3xl">
                 Потрібна консультація щодо оснащення лабораторії?
               </h2>
-              <p className="mt-2 text-on-brand/80">
+              <p className="mt-2 text-muted">
                 Наші спеціалісти допоможуть підібрати оптимальне обладнання для
                 ваших завдань.
               </p>

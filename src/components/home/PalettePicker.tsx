@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // TEMPORARY: lets the owner try palettes on the homepage. Remove once a
 // palette is chosen (then move its values into the default @theme block).
 const PALETTES = [
-  { id: "gold", label: "Світлий: білий, чорний, золото", color: "#c9a24a" },
+  { id: "gold", label: "Світлий: білий, чорний, золото", color: "#b89b5e" },
   { id: "dark-gold", label: "Темний: чорний і золото", color: "#0d0d0d" },
 ];
 const KEY = "jevol-palette";
