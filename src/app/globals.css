@@ -103,6 +103,16 @@ html {
     animation: hero-photo-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
 
+  /* "Why" cards: lift, blue border, icon fills with the accent. */
+  .why-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .why-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-brand);
+    box-shadow: 0 18px 36px -18px rgb(0 0 0 / 0.35);
+  }
+
   /* Buttons lift slightly on hover. */
   .btn-lift {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
@@ -116,10 +126,16 @@ html {
 @supports (animation-timeline: view()) {
   @media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
     .reveal {
-      animation: reveal-in linear both;
+      /* "backwards" (not "both"): after the entrance the element returns to its
+         own styles, so hover transforms keep working. */
+      animation: reveal-in linear backwards;
       animation-timeline: view();
       animation-range: entry 0% entry 40%;
     }
+    /* Staggered entrance for the four "why" cards. */
+    .why-card:nth-child(2) { animation-range: entry 6% entry 46%; }
+    .why-card:nth-child(3) { animation-range: entry 12% entry 52%; }
+    .why-card:nth-child(4) { animation-range: entry 18% entry 58%; }
     .step-line {
       transform-origin: left;
       animation: line-draw linear both;

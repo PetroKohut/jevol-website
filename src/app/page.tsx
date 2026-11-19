@@ -565,9 +565,13 @@ export default function Home() {
               {whyCards.map((c) => (
                 <div
                   key={c.title}
-                  className="reveal rounded-xl border border-rule bg-surface p-6 shadow-sm transition-shadow hover:shadow-xl"
+                  className="reveal why-card group relative overflow-hidden rounded-xl border border-rule bg-surface p-6 shadow-sm"
                 >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand/15 text-brand-ink">
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-brand transition-transform duration-500 group-hover:scale-x-100 motion-reduce:transition-none"
+                  />
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand/15 text-brand-ink transition-colors duration-300 group-hover:bg-brand group-hover:text-on-brand">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden className="h-6 w-6">
                       <path d={whyIcons[whyCards.indexOf(c)]} />
                     </svg>
