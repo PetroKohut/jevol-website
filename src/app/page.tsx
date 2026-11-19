@@ -6,6 +6,7 @@ import { HomeHeader } from "@/components/home/HomeHeader";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { ObjectsGallery } from "@/components/home/ObjectsGallery";
 import { FeatureTabs } from "@/components/home/FeatureTabs";
+import { PalettePicker } from "@/components/home/PalettePicker";
 import { categories } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
 
@@ -688,6 +689,7 @@ export default function Home() {
       </main>
 
       <HomeFooter />
+      <PalettePicker />
     </div>
   );
 }
