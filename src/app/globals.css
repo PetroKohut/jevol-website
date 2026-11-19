@@ -87,3 +87,44 @@ html {
     }
   }
 }
+
+html[data-palette="green"] {
+  --color-navy: #0c2a1e;
+  --color-navy-2: #123a29;
+  --color-brand: #1e7a4c;
+  --color-brand-dark: #165c39;
+  --color-mist: #f1f6f3;
+  --color-rule: #d9e5de;
+}
+html[data-palette="burgundy"] {
+  --color-navy: #25121a;
+  --color-navy-2: #321a24;
+  --color-brand: #9b1b30;
+  --color-brand-dark: #771424;
+  --color-mist: #f8f3f4;
+  --color-rule: #eadde0;
+}
+html[data-palette="indigo"] {
+  --color-navy: #141438;
+  --color-navy-2: #1d1d4d;
+  --color-brand: #4338ca;
+  --color-brand-dark: #3329a3;
+  --color-mist: #f4f4fb;
+  --color-rule: #e0e0f2;
+}
+html[data-palette="steel"] {
+  --color-navy: #1b242d;
+  --color-navy-2: #25313c;
+  --color-brand: #35607f;
+  --color-brand-dark: #284a63;
+  --color-mist: #f2f5f7;
+  --color-rule: #dce3e9;
+}
+html[data-palette="copper"] {
+  --color-navy: #1f1814;
+  --color-navy-2: #2b221c;
+  --color-brand: #b4541a;
+  --color-brand-dark: #8f4213;
+  --color-mist: #f8f4f0;
+  --color-rule: #eaded3;
+}

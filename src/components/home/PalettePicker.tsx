@@ -9,6 +9,11 @@ const PALETTES = [
   { id: "graphite-orange", label: "Графіт і помаранчевий", color: "#e85d00" },
   { id: "graphite-red", label: "Графіт і червоний (як колесо в логотипі)", color: "#d62828" },
   { id: "teal", label: "Бірюзовий", color: "#0e8a8f" },
+  { id: "green", label: "Зелений", color: "#1e7a4c" },
+  { id: "burgundy", label: "Бордовий", color: "#9b1b30" },
+  { id: "indigo", label: "Індиго", color: "#4338ca" },
+  { id: "steel", label: "Сталевий", color: "#35607f" },
+  { id: "copper", label: "Мідний", color: "#b4541a" },
 ];
 const KEY = "jevol-palette";
 
@@ -37,7 +42,7 @@ export function PalettePicker() {
     <div
       role="group"
       aria-label="Тимчасовий вибір кольорів"
-      className="fixed bottom-4 left-4 z-50 flex items-center gap-2 rounded-full border border-rule bg-white px-3 py-2 shadow-xl"
+      className="fixed bottom-4 left-4 z-50 flex max-w-[calc(100vw-5rem)] flex-wrap items-center gap-2 rounded-2xl border border-rule bg-white px-3 py-2 shadow-xl"
     >
       <span className="hidden text-xs font-bold text-slate-500 sm:inline">Кольори:</span>
       {PALETTES.map((p) => (
