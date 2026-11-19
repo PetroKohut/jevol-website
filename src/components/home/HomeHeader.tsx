@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -69,9 +70,16 @@ export function HomeHeader() {
         <Link
           href="/"
           aria-label="JEVOL — на головну"
-          className="text-[28px] font-black italic leading-none tracking-tight text-brand"
+          className="flex shrink-0 items-center"
         >
-          JEVOL
+          <Image
+            src="/logo-jevol.png"
+            alt="JEVOL"
+            width={285}
+            height={97}
+            priority
+            className="h-9 w-auto sm:h-10"
+          />
         </Link>
 
         <nav

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { categories } from "@/lib/categories";
 
@@ -6,9 +7,13 @@ export function HomeFooter() {
     <footer className="bg-navy text-slate-300">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div>
-          <span className="text-3xl font-black italic tracking-tight text-white">
-            JEVOL
-          </span>
+          <Image
+            src="/logo-jevol-light.png"
+            alt="JEVOL"
+            width={285}
+            height={97}
+            className="h-11 w-auto"
+          />
           <p className="mt-4 max-w-xs text-sm text-slate-400">
             Офіційний представник Shanghai JEVOL в Україні. Обладнання для
             випробувальних лабораторій та технічного контролю транспортних
