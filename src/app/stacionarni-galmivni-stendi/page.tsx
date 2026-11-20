@@ -183,7 +183,7 @@ export default function StationaryBrakeStandsPage() {
 
       <main className="flex-1">
         <ProductHero
-          image={imageUrl(heroImage.path)}
+          image={imageUrl("23.webp")}
           title={
             <>
               УНІВЕРСАЛЬНИЙ СТАЦІОНАРНИЙ ГАЛЬМІВНИЙ СТЕНД СЕРІЇ RRT
