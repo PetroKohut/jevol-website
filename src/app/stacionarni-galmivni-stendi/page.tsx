@@ -217,7 +217,13 @@ export default function StationaryBrakeStandsPage() {
         {/* Photo gallery */}
         <section className="bg-surface py-10 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl px-4">
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-5">
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
+              Реалізовані проєкти
+            </h2>
+            <p className="mt-3 max-w-2xl text-base text-muted">
+              Лабораторії техогляду та майданчики, де встановлено обладнання JEVOL.
+            </p>
+            <div className="mt-6 sm:mt-10 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-5">
               {galleryImages.map((img) => (
                 <div
                   key={img.path}
