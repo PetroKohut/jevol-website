@@ -399,29 +399,29 @@ export default function Home() {
       <main className="flex-1">
         {/* 2. Hero: text on solid black, photo in its own frame (no overlay) */}
         <section className="relative bg-navy text-white">
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-28 pt-12 sm:pt-16 lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:pb-36 lg:pt-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-6 px-4 pb-20 pt-8 sm:gap-10 sm:pb-28 sm:pt-16 lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:pb-36 lg:pt-20">
             <div>
               <p className="hero-in w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
                 Офіційний представник JEVOL в Україні
               </p>
-              <h1 className="hero-in hero-in-2 mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[2.85rem]">
+              <h1 className="hero-in hero-in-2 mt-4 text-[1.85rem] font-extrabold leading-[1.12] tracking-tight sm:mt-6 sm:text-5xl lg:text-[2.85rem]">
                 Сучасне високоточне обладнання для діагностики транспортних
                 засобів
               </h1>
-              <p className="hero-in hero-in-3 mt-5 max-w-lg text-lg text-slate-200 sm:text-xl">
+              <p className="hero-in hero-in-3 mt-3 max-w-lg text-base text-slate-200 sm:mt-5 sm:text-xl">
                 Гальмівні стенди, детектор люфтів, газоаналізатор, димомір,
                 реглоскоп та додаткове обладнання для техогляду.
               </p>
-              <div className="hero-in hero-in-4 mt-8 flex flex-wrap gap-3">
+              <div className="hero-in hero-in-4 mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
                 <a
                   href="https://wa.me/380504709561"
-                  className="btn-lift inline-flex h-12 items-center rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
+                  className="btn-lift inline-flex h-12 w-full items-center justify-center rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark sm:w-auto"
                 >
                   Написати нам у WhatsApp
                 </a>
                 <a
                   href="#categories"
-                  className="btn-lift inline-flex h-12 items-center rounded-md border border-white/40 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
+                  className="btn-lift inline-flex h-12 w-full items-center justify-center rounded-md border border-white/40 px-6 sm:w-auto text-sm font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-navy"
                 >
                   Переглянути прилади
                 </a>
