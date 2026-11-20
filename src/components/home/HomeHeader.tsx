@@ -39,10 +39,14 @@ export function HomeHeader() {
   const [mobCats, setMobCats] = useState(false);
   const dropRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  // Close menus on navigation (adjust state during render instead of in an effect).
+  const [lastPath, setLastPath] = useState(pathname);
+  if (lastPath !== pathname) {
+    setLastPath(pathname);
     setMenuOpen(false);
     setCatOpen(false);
-  }, [pathname]);
+    setMobCats(false);
+  }
 
   useEffect(() => {
     if (!catOpen) return;

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductGallery } from "@/components/product/ProductGallery";

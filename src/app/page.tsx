@@ -187,7 +187,6 @@ const diagnosticsFeatures = [
 const HERO_BUCKET = "images";
 const HERO_FOLDER = "hero-gallery";
 
-const HERO_BG_URL = storageUrl(HERO_BUCKET, "stacionarni-galmivni-stendi/23.webp");
 
 const heroSlides = [
   { path: "AutoTechService_7.webp", alt: "Стенд JEVOL на виставці «Все для техогляду»", width: 4032, height: 3024 },
