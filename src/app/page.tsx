@@ -528,17 +528,22 @@ export default function Home() {
                 Створюємо сучасні лінії технічного контролю під ключ.
               </p>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {complexServices.map((t, i) => (
+                {complexServices.map((t, i) => {
+                  // Two columns: left column top to bottom first, then the right one.
+                  const rows = Math.ceil(complexServices.length / 2);
+                  const order = (i % 2) * rows + Math.floor(i / 2);
+                  return (
                   <li
                     key={t}
                     data-anim="item"
-                    style={{ "--d": `${i * 140}ms` } as React.CSSProperties}
+                    style={{ "--d": `${order * 160}ms` } as React.CSSProperties}
                     className="flex gap-2.5 text-[15px] font-semibold"
                   >
                     <Check />
                     {t}
                   </li>
-                ))}
+                  );
+                })}
               </ul>
               <a
                 href="#software"
