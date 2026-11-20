@@ -1,6 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 
-export function HomeContact() {
+export function HomeContact({ showContacts = true }: { showContacts?: boolean } = {}) {
   return (
     <section id="contact" className="scroll-mt-20 bg-mist">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10 lg:py-12">
@@ -14,6 +14,7 @@ export function HomeContact() {
             <p className="relative mt-4 text-base text-on-brand/90">
               Ми зв&apos;яжемось з вами для консультації
             </p>
+            {showContacts && (
             <div className="relative mt-6 grid gap-4 sm:mt-10">
               <a
                 href="mailto:info.jevol@gmail.com"
@@ -33,6 +34,7 @@ export function HomeContact() {
                 Написати нам у WhatsApp
               </a>
             </div>
+            )}
           </div>
           <div className="p-5 sm:p-10">
             <ContactForm variant="home" />
