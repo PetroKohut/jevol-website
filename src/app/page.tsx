@@ -650,10 +650,14 @@ export default function Home() {
             <p className="reveal mt-4 max-w-2xl text-base text-slate-200">
               {diagnosticsFeatures[5].text}
             </p>
-            <ol className="reveal mt-12 grid gap-8 md:grid-cols-5 md:gap-0">
+            <ol data-anim="steps" className="steps-list mt-12 grid gap-8 md:grid-cols-5 md:gap-0">
               {protocolSteps.map((st, i) => (
-                <li key={st.title} className="relative md:pr-5">
-                  <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand text-base font-extrabold text-on-brand shadow-lg shadow-brand/40">
+                <li
+                  key={st.title}
+                  style={{ "--i": i } as React.CSSProperties}
+                  className="step-item relative md:pr-5"
+                >
+                  <span className="step-dot relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-brand bg-brand text-base font-extrabold text-on-brand shadow-lg shadow-brand/40">
                     {i + 1}
                   </span>
                   {i < protocolSteps.length - 1 && (
@@ -662,8 +666,10 @@ export default function Home() {
                       className="step-line absolute left-11 top-[22px] hidden h-px w-[calc(100%-2.75rem)] bg-gradient-to-r from-brand to-white/10 md:block"
                     />
                   )}
-                  <h3 className="mt-4 text-[17px] font-extrabold">{st.title}</h3>
-                  <p className="mt-1 text-[15px] text-slate-300">{st.text}</p>
+                  <div className="step-text">
+                    <h3 className="mt-4 text-[17px] font-extrabold">{st.title}</h3>
+                    <p className="mt-1 text-[15px] text-slate-300">{st.text}</p>
+                  </div>
                 </li>
               ))}
             </ol>

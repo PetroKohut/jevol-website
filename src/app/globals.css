@@ -177,12 +177,6 @@ html {
     .why-card:nth-child(2) { animation-range: entry 6% entry 46%; }
     .why-card:nth-child(3) { animation-range: entry 12% entry 52%; }
     .why-card:nth-child(4) { animation-range: entry 18% entry 58%; }
-    .step-line {
-      transform-origin: left;
-      animation: line-draw linear both;
-      animation-timeline: view();
-      animation-range: entry 20% cover 45%;
-    }
   }
 }
 
@@ -242,6 +236,72 @@ html {
   }
   li[data-anim].anim-pending .feat-check path {
     stroke-dashoffset: 1;
+  }
+}
+
+/* "Єдина система" steps: light up one after another when the block appears,
+   a ripple on the last step, and a hover highlight. Desktop pointer only. */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgb(61 106 158 / 0.65);
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgb(61 106 158 / 0);
+  }
+}
+@media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+  [data-anim="steps"].anim-pending {
+    opacity: 1;
+    transform: none;
+  }
+  /* Base: only hover transitions. The delayed "light up" transitions apply
+     only once the chain is released, so the dark start state is instant. */
+  .step-dot {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .step-line,
+  .step-text {
+    transition: none;
+  }
+  .step-line {
+    transform-origin: left;
+  }
+  [data-anim="steps"]:not(.anim-pending) .step-dot {
+    transition: background-color 0.5s ease calc(var(--i, 0) * 450ms),
+      color 0.5s ease calc(var(--i, 0) * 450ms), transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  [data-anim="steps"]:not(.anim-pending) .step-line {
+    transition: transform 0.45s ease calc(var(--i, 0) * 450ms + 250ms);
+  }
+  [data-anim="steps"]:not(.anim-pending) .step-text {
+    transition: opacity 0.6s ease calc(var(--i, 0) * 450ms + 150ms);
+  }
+  [data-anim="steps"].anim-pending .step-dot {
+    background-color: transparent;
+    color: rgb(255 255 255 / 0.5);
+    box-shadow: none;
+  }
+  [data-anim="steps"].anim-pending .step-line {
+    transform: scaleX(0);
+  }
+  [data-anim="steps"].anim-pending .step-text {
+    opacity: 0.35;
+  }
+  /* Ripple on the final step once the chain is lit. */
+  [data-anim="steps"]:not(.anim-pending) .step-item:last-child .step-dot {
+    animation: pulse-ring 1.3s ease-out 2.3s 2;
+  }
+  /* Hover: lift the step, dim the others. */
+  .steps-list .step-item {
+    transition: opacity 0.25s ease;
+  }
+  .steps-list:hover .step-item:not(:hover) {
+    opacity: 0.55;
+  }
+  .step-item:hover .step-dot {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 7px rgb(61 106 158 / 0.28);
   }
 }
 
