@@ -7,6 +7,7 @@ import { HomeFooter } from "@/components/home/HomeFooter";
 import { ObjectsGallery } from "@/components/home/ObjectsGallery";
 import { FeatureSection } from "@/components/home/FeatureSection";
 import { AnimObserver } from "@/components/home/AnimObserver";
+import { typo } from "@/lib/typo";
 import { categories } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
 
@@ -598,9 +599,9 @@ export default function Home() {
                       <path d={whyIcons[whyCards.indexOf(c)]} />
                     </svg>
                   </div>
-                  <h3 className="text-[17px] font-extrabold leading-snug">{c.title}</h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-muted">
-                    {c.item.text}
+                  <h3 className="text-balance text-[17px] font-extrabold leading-snug">{typo(c.title)}</h3>
+                  <p className="just mt-3 text-[15px] leading-relaxed text-muted">
+                    {typo(c.item.text)}
                   </p>
                 </div>
               ))}
@@ -608,7 +609,7 @@ export default function Home() {
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
               <div className="reveal rounded-xl bg-mist p-6 sm:p-8">
                 <h3 className="text-[17px] font-extrabold">{trustItems[3].title}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-muted">{trustItems[3].text}</p>
+                <p className="just mt-2 text-[15px] leading-relaxed text-muted">{typo(trustItems[3].text)}</p>
               </div>
               <div className="reveal relative overflow-hidden rounded-xl bg-brand p-6 text-on-brand shadow-lg sm:p-8">
                 <span
@@ -632,7 +633,7 @@ export default function Home() {
                   </span>
                   <div>
                     <h3 className="text-xl font-extrabold leading-snug">{trustItems[5].title}</h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-on-brand/90">{trustItems[5].text}</p>
+                    <p className="just mt-2 text-[15px] leading-relaxed text-on-brand/90">{typo(trustItems[5].text)}</p>
                   </div>
                 </div>
               </div>

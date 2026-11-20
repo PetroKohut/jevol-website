@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { typo } from "@/lib/typo";
 
 type Item = { title: string; text: string };
 
@@ -56,11 +57,11 @@ export function FeatureSection({
           </div>
 
           <div>
-            <h2 className="leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
-              {title}
+            <h2 className="text-balance leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
+              {typo(title)}
             </h2>
             <span aria-hidden data-anim="line" style={{ "--d": "250ms" } as CSSProperties} className="mt-3 block h-0.5 w-16 bg-brand" />
-            <p className="mt-3 text-base leading-relaxed text-muted">{intro}</p>
+            <p className="just mt-3 text-base leading-relaxed text-muted">{typo(intro)}</p>
           </div>
         </div>
 
@@ -81,8 +82,8 @@ export function FeatureSection({
                 </svg>
               </span>
               <div>
-                <h3 className="text-[17px] font-extrabold leading-snug">{it.title}</h3>
-                <p className="mt-1 text-[15px] leading-relaxed text-muted">{it.text}</p>
+                <h3 className="text-balance text-[17px] font-extrabold leading-snug">{typo(it.title)}</h3>
+                <p className="just mt-1 text-[15px] leading-relaxed text-muted">{typo(it.text)}</p>
               </div>
             </li>
           ))}
