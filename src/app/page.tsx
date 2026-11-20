@@ -387,12 +387,12 @@ export default function Home() {
       <main className="flex-1">
         {/* 2. Hero: text on solid black, photo in its own frame (no overlay) */}
         <section className="relative bg-navy text-white">
-          <div className="mx-auto grid max-w-6xl items-center gap-6 px-4 pb-20 pt-8 sm:gap-10 sm:pb-28 sm:pt-16 lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:pb-36 lg:pt-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-6 px-4 pb-20 pt-8 sm:gap-10 sm:pb-28 sm:pt-16 lg:grid-cols-[1.4fr_1fr] lg:gap-10 lg:pb-36 lg:pt-20">
             <div>
               <p className="hero-in w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
                 Офіційний представник JEVOL в Україні
               </p>
-              <h1 className="hero-in hero-in-2 mt-4 text-[1.85rem] font-extrabold leading-[1.12] tracking-tight sm:mt-6 sm:text-5xl lg:text-[2.6rem]">
+              <h1 className="hero-in hero-in-2 mt-4 text-[1.85rem] font-extrabold leading-[1.12] tracking-tight sm:mt-6 sm:text-5xl lg:text-[2.5rem]">
                 Сучасне високоточне обладнання для діагностики транспортних
                 засобів
               </h1>
