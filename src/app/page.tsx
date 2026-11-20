@@ -596,34 +596,36 @@ export default function Home() {
             <h2 className="reveal text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Чому обирають JEVOL
             </h2>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-6 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
               {whyCards.map((c) => (
                 <div
                   key={c.title}
-                  className="reveal why-card group relative overflow-hidden rounded-xl border border-rule bg-surface p-6 shadow-sm"
+                  className="reveal why-card group relative overflow-hidden rounded-xl border border-rule bg-surface p-5 shadow-sm sm:p-6"
                 >
                   <span
                     aria-hidden
                     className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-brand transition-transform duration-500 group-hover:scale-x-100 motion-reduce:transition-none"
                   />
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-brand/15 text-brand-ink transition-colors duration-300 group-hover:bg-brand group-hover:text-on-brand">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden className="h-6 w-6">
-                      <path d={whyIcons[whyCards.indexOf(c)]} />
-                    </svg>
+                  <div className="flex items-center gap-3 sm:block">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand/15 text-brand-ink transition-colors duration-300 group-hover:bg-brand group-hover:text-on-brand sm:mb-5 sm:h-12 sm:w-12">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" aria-hidden className="h-5 w-5 sm:h-6 sm:w-6">
+                        <path d={whyIcons[whyCards.indexOf(c)]} />
+                      </svg>
+                    </div>
+                    <h3 className="text-balance text-[17px] font-extrabold leading-snug">{typo(c.title)}</h3>
                   </div>
-                  <h3 className="text-balance text-[17px] font-extrabold leading-snug">{typo(c.title)}</h3>
                   <p className="just mt-3 text-[15px] leading-relaxed text-muted">
                     {typo(c.item.text)}
                   </p>
                 </div>
               ))}
             </div>
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              <div className="reveal rounded-xl bg-mist p-6 sm:p-8">
+            <div className="mt-6 grid gap-3 sm:mt-10 sm:gap-5 lg:grid-cols-2">
+              <div className="reveal rounded-xl bg-mist p-5 sm:p-8">
                 <h3 className="text-[17px] font-extrabold">{trustItems[3].title}</h3>
                 <p className="just mt-2 text-[15px] leading-relaxed text-muted">{typo(trustItems[3].text)}</p>
               </div>
-              <div className="reveal relative overflow-hidden rounded-xl bg-brand p-6 text-on-brand shadow-lg sm:p-8">
+              <div className="reveal relative overflow-hidden rounded-xl bg-brand p-5 text-on-brand shadow-lg sm:p-8">
                 <span
                   aria-hidden
                   className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full bg-white/10"
@@ -632,10 +634,10 @@ export default function Home() {
                   aria-hidden
                   className="pointer-events-none absolute -bottom-20 right-16 h-40 w-40 rounded-full bg-white/[0.07]"
                 />
-                <div className="relative flex gap-5">
+                <div className="relative flex gap-4 sm:gap-5">
                   <span
                     aria-hidden
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white text-brand-ink shadow-sm"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-brand-ink shadow-sm sm:h-14 sm:w-14"
                   >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
                       <path d="M7 3h7l5 5v13H7z" />
@@ -644,7 +646,7 @@ export default function Home() {
                     </svg>
                   </span>
                   <div>
-                    <h3 className="text-xl font-extrabold leading-snug">{trustItems[5].title}</h3>
+                    <h3 className="text-lg font-extrabold leading-snug sm:text-xl">{typo(trustItems[5].title)}</h3>
                     <p className="just mt-2 text-[15px] leading-relaxed text-on-brand/90">{typo(trustItems[5].text)}</p>
                   </div>
                 </div>
