@@ -8,7 +8,7 @@ import { categories } from "@/lib/categories";
 
 const NAV = [
   { label: "Комплексні рішення", href: "/#complex" },
-  { label: "Наші об'єкти", href: "/#objects" },
+  { label: "Реалізовані проєкти", href: "/#objects" },
   { label: "Сервіс", href: "/#service" },
   { label: "Контакти", href: "/contact" },
 ];

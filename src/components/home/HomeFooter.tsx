@@ -28,7 +28,7 @@ export function HomeFooter() {
           <ul className="grid gap-2.5 text-sm">
             <li><Link href="/#categories" className="hover:text-white">Обладнання</Link></li>
             <li><Link href="/#complex" className="hover:text-white">Комплексні рішення</Link></li>
-            <li><Link href="/#objects" className="hover:text-white">Наші об&apos;єкти</Link></li>
+            <li><Link href="/#objects" className="hover:text-white">Реалізовані проєкти</Link></li>
             <li><Link href="/#service" className="hover:text-white">Сервіс</Link></li>
             <li><Link href="/contact" className="hover:text-white">Контакти</Link></li>
           </ul>
