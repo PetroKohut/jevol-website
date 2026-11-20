@@ -35,26 +35,47 @@ export function ProductGallery({ photos }: { photos: Photo[] }) {
     };
   }, [isOpen, go]);
 
+  const single = n === 1;
+
   return (
     <>
-      <div className="mt-5 grid grid-cols-2 gap-2 sm:mt-6 sm:grid-cols-4 lg:grid-cols-5">
+      <div
+        className={`mt-5 grid gap-2 sm:mt-6 ${
+          single ? "items-center lg:grid-cols-[1.1fr_1fr] lg:gap-10" : ""
+        } ${
+          single
+            ? "grid-cols-1 gap-4"
+            : n === 2
+              ? "grid-cols-1 gap-3 sm:grid-cols-2"
+              : n === 3
+                ? "grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
+              : "grid-cols-2 sm:grid-cols-4 lg:grid-cols-5"
+        }`}
+      >
         {photos.map((p, i) => (
           <button
             key={p.src}
             type="button"
             onClick={() => setOpen(i)}
             aria-label={`Збільшити фото: ${p.alt}`}
-            className="group relative aspect-[4/3] cursor-zoom-in overflow-hidden rounded-xl bg-navy shadow-md"
+            className={`group relative cursor-zoom-in overflow-hidden rounded-xl bg-navy shadow-md ${
+              n <= 3 ? "aspect-[16/10]" : "aspect-[4/3]"
+            }`}
           >
             <Image
               src={p.src}
               alt={p.alt}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
-              sizes="(min-width: 1024px) 20vw, (min-width: 640px) 25vw, 50vw"
+              sizes={n <= 3 ? "(min-width: 1024px) 40vw, 100vw" : "(min-width: 1024px) 20vw, (min-width: 640px) 25vw, 50vw"}
             />
           </button>
         ))}
+        {single && (
+          <div className="border-l-4 border-brand pl-5">
+            <p className="text-lg font-extrabold leading-snug sm:text-xl">{photos[0].alt}</p>
+          </div>
+        )}
       </div>
 
       {isOpen && (
