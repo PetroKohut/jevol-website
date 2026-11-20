@@ -466,7 +466,7 @@ export default function Home() {
                   <span aria-hidden className="h-0.5 w-8 bg-brand" />
                   Каталог
                 </p>
-                <h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl">
+                <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
                   Обладнання JEVOL
                 </h2>
               </div>
@@ -496,8 +496,8 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-white">
                       <div>
-                        <h3 className="text-xl font-extrabold leading-snug">{cat.name}</h3>
-                        <p className="mt-1 text-sm text-slate-200">
+                        <h3 className="text-[17px] font-extrabold leading-snug">{cat.name}</h3>
+                        <p className="mt-1 text-[15px] text-slate-200">
                           {categoryBlurbs[cat.href]}
                         </p>
                       </div>
@@ -519,10 +519,10 @@ export default function Home() {
         <section id="complex" className="scroll-mt-20 bg-mist">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[1fr_1.15fr]">
             <div className="reveal">
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+              <h2 className="leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
                 Комплексне оснащення лабораторій технічного контролю
               </h2>
-              <p className="mt-4 max-w-lg text-lg text-muted">
+              <p className="mt-4 max-w-lg text-base text-muted">
                 Від підбору обладнання до монтажу та навчання персоналу.
                 Створюємо сучасні лінії технічного контролю під ключ.
               </p>
@@ -569,7 +569,7 @@ export default function Home() {
               <span aria-hidden className="h-0.5 w-8 bg-brand" />
               Переваги
             </p>
-            <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-5xl">
+            <h2 className="reveal text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Чому обирають JEVOL
             </h2>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -587,7 +587,7 @@ export default function Home() {
                       <path d={whyIcons[whyCards.indexOf(c)]} />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-extrabold leading-snug">{c.title}</h3>
+                  <h3 className="text-[17px] font-extrabold leading-snug">{c.title}</h3>
                   <p className="mt-3 text-[15px] leading-relaxed text-muted">
                     {c.item.text}
                   </p>
@@ -608,7 +608,7 @@ export default function Home() {
         {/* 7. Objects */}
         <section id="objects" className="scroll-mt-20 bg-mist">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-5xl">
+            <h2 className="reveal text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Реалізовані проєкти
             </h2>
             <p className="reveal mt-3 max-w-2xl text-muted">
@@ -643,10 +643,10 @@ export default function Home() {
           <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-white/[0.06] blur-3xl" />
           <div aria-hidden className="pointer-events-none absolute -bottom-52 -left-40 h-[420px] w-[420px] rounded-full bg-brand/10 blur-3xl" />
           <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
-            <h2 className="reveal max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+            <h2 className="reveal max-w-3xl leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Єдина система — єдиний протокол випробувань
             </h2>
-            <p className="reveal mt-4 max-w-2xl text-lg text-slate-200">
+            <p className="reveal mt-4 max-w-2xl text-base text-slate-200">
               {diagnosticsFeatures[5].text}
             </p>
             <ol className="reveal mt-12 grid gap-8 md:grid-cols-5 md:gap-0">
@@ -661,8 +661,8 @@ export default function Home() {
                       className="step-line absolute left-11 top-[22px] hidden h-px w-[calc(100%-2.75rem)] bg-gradient-to-r from-brand to-white/10 md:block"
                     />
                   )}
-                  <h3 className="mt-4 font-bold">{st.title}</h3>
-                  <p className="mt-1 text-sm text-slate-300">{st.text}</p>
+                  <h3 className="mt-4 text-[17px] font-extrabold">{st.title}</h3>
+                  <p className="mt-1 text-[15px] text-slate-300">{st.text}</p>
                 </li>
               ))}
             </ol>
@@ -673,7 +673,7 @@ export default function Home() {
         <section className="border-t-2 border-brand bg-mist text-ink">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 md:flex-row md:items-center">
             <div className="max-w-2xl">
-              <h2 className="text-2xl font-extrabold leading-tight sm:text-3xl">
+              <h2 className="leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
                 Потрібна консультація щодо оснащення лабораторії?
               </h2>
               <p className="mt-2 text-muted">
