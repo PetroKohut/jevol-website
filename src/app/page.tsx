@@ -600,16 +600,19 @@ export default function Home() {
                 <h3 className="text-[17px] font-extrabold">{trustItems[3].title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted">{trustItems[3].text}</p>
               </div>
-              <div className="reveal relative overflow-hidden rounded-xl bg-navy p-6 text-white shadow-xl sm:p-8">
-                <span aria-hidden className="absolute inset-y-0 left-0 w-1.5 bg-brand" />
+              <div className="reveal relative overflow-hidden rounded-xl bg-brand p-6 text-on-brand shadow-lg sm:p-8">
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-brand/30 blur-3xl"
+                  className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full bg-white/10"
+                />
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -bottom-20 right-16 h-40 w-40 rounded-full bg-white/[0.07]"
                 />
                 <div className="relative flex gap-5">
                   <span
                     aria-hidden
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-brand text-on-brand"
+                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white text-brand-ink shadow-sm"
                   >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
                       <path d="M7 3h7l5 5v13H7z" />
@@ -619,7 +622,7 @@ export default function Home() {
                   </span>
                   <div>
                     <h3 className="text-xl font-extrabold leading-snug">{trustItems[5].title}</h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-slate-200">{trustItems[5].text}</p>
+                    <p className="mt-2 text-[15px] leading-relaxed text-on-brand/90">{trustItems[5].text}</p>
                   </div>
                 </div>
               </div>
