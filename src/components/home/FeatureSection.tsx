@@ -23,8 +23,8 @@ export function FeatureSection({
 }) {
   return (
     <section className={tone === "mist" ? "bg-mist" : "bg-surface"}>
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
-        <div className="grid items-center gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
+        <div className={`grid items-center gap-5 lg:gap-10 ${flip ? "lg:grid-cols-[1fr_300px]" : "lg:grid-cols-[300px_1fr]"}`}>
           <div className={`reveal relative ${flip ? "lg:order-2" : ""}`}>
             <div
               aria-hidden
@@ -32,12 +32,12 @@ export function FeatureSection({
                 flip ? "-left-3" : "-right-3"
               }`}
             />
-            <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-navy shadow-xl">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-navy shadow-lg">
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
+                sizes="(min-width: 1024px) 300px, 100vw"
                 className="object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5">
@@ -49,16 +49,16 @@ export function FeatureSection({
           </div>
 
           <div className="reveal">
-            <h2 className="text-2xl font-extrabold leading-tight tracking-tight sm:text-[1.7rem] lg:text-[1.9rem]">
+            <h2 className="text-xl font-extrabold leading-tight tracking-tight sm:text-2xl lg:text-[1.65rem]">
               {title}
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-muted">{intro}</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-muted">{intro}</p>
           </div>
         </div>
 
-        <ul className="mt-8 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (
-            <li key={it.title} className="reveal flex gap-3 border-t border-rule pt-4">
+            <li key={it.title} className="reveal flex gap-3 border-t border-rule pt-3">
               <span
                 aria-hidden
                 className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand/15 text-brand-ink"
@@ -68,8 +68,8 @@ export function FeatureSection({
                 </svg>
               </span>
               <div>
-                <h3 className="text-base font-extrabold leading-snug">{it.title}</h3>
-                <p className="mt-1.5 text-[15px] leading-relaxed text-muted">{it.text}</p>
+                <h3 className="text-[15px] font-extrabold leading-snug">{it.title}</h3>
+                <p className="mt-1 text-[14.5px] leading-relaxed text-muted">{it.text}</p>
               </div>
             </li>
           ))}
