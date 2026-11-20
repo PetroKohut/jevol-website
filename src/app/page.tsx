@@ -487,7 +487,7 @@ export default function Home() {
                   href={cat.href}
                   className="reveal group flex flex-col overflow-hidden rounded-xl bg-navy shadow-md transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                 >
-                  <div className="relative aspect-[4/5] bg-navy sm:aspect-[4/4.4]">
+                  <div className="relative aspect-[16/10] bg-navy sm:aspect-[4/4.4]">
                     <Image
                       src={storageUrl("images", `${cat.imageFolder}/${cat.imagePath}`)}
                       alt={cat.name}
