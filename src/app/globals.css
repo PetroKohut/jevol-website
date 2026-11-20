@@ -450,3 +450,17 @@ main h3 {
   }
 }
 
+/* Headings: a little more air between words, less tight letter-spacing than the
+   default "tracking-tight" utilities. */
+main h1,
+main h2,
+main h3 {
+  word-spacing: 0.1em;
+  letter-spacing: -0.005em !important;
+}
+/* ALL-CAPS titles (product page headers) need even more word space. */
+.caps-title {
+  word-spacing: 0.22em !important;
+  letter-spacing: 0.012em !important;
+}
+
