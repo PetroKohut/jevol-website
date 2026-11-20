@@ -197,21 +197,21 @@ export default function RegloskopPage() {
 
         {/* FAQ */}
         <section className="bg-mist">
-          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Поширені запитання
             </h2>
-            <FaqAccordion items={faqs} theme="light" className="mt-10" />
+            <FaqAccordion items={faqs} theme="light" className="mt-5 sm:mt-6" />
           </div>
         </section>
 
         {/* Photo gallery */}
-        <section className="bg-surface py-10 sm:py-16 lg:py-20">
+        <section className="bg-surface py-8 sm:py-10">
           <div className="mx-auto max-w-6xl px-4">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Фото обладнання
             </h2>
-            <div className="mt-6 sm:mt-10 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {galleryImages.map((img) => (
                 <div
                   key={img.path}
@@ -232,7 +232,7 @@ export default function RegloskopPage() {
 
         {/* Technical specs */}
         <section className="bg-mist">
-          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Технічні параметри реглоскопа JVH-M100
             </h2>
@@ -242,7 +242,7 @@ export default function RegloskopPage() {
               лабораторії технічного контролю відповідно до вимог ДСТУ
               3649:2010 та ISO/IEC 17025:2017.
             </p>
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
               {specs.map((s) => (
                 <div key={s.title} className="info-card">
                   <h3 className="font-extrabold text-ink">

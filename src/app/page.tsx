@@ -8,7 +8,7 @@ import { ObjectsGallery } from "@/components/home/ObjectsGallery";
 import { FeatureSection } from "@/components/home/FeatureSection";
 import { AnimObserver } from "@/components/home/AnimObserver";
 import { typo } from "@/lib/typo";
-import { categories } from "@/lib/categories";
+import { categories, categoryBlurbs, categoryFocus } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
 
 const HOME_TITLE =
@@ -234,11 +234,6 @@ const heroSlides = [
 // 3 = truck on a JEVOL mobile brake stand (hero), 10 = test line with control
 // cabin (complex fitting), 14 = lab with a stationary stand (big gallery tile),
 // 15 / 11 / 5 = small gallery tiles. The lightbox opens all of them.
-// Where each card photo is cropped (object-position), so the device stays in
-// frame on the wide mobile cards.
-const categoryFocus: Record<string, string> = {
-  "/regloskopp": "50% 90%",
-};
 
 const HERO_PHOTO = heroSlides[3];
 const COMPLEX_PHOTO = heroSlides[10];
@@ -246,14 +241,6 @@ const GALLERY_BIG = 14;
 const GALLERY_SMALL = [15, 11, 5];
 
 // Short card lines are existing headings from the product pages/sections.
-const categoryBlurbs: Record<string, string> = {
-  "/stacionarni-galmivni-stendi": "Повний комплекс вимірювань гальмівної системи",
-  "/peresuvni-galmivni-stendi": "Встановлення без оглядової ями",
-  "/jvs-600": "Вимірювання димності дизельних двигунів",
-  "/jve-501": "5-канальний аналіз вихлопних газів",
-  "/detektor-lyuftiv": "Діагностика підвіски для техогляду",
-  "/regloskopp": "Контроль та налаштування світла фар",
-};
 
 const advantages = [
   { label: "100+ лабораторій оснащено", icon: "lab" },

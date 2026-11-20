@@ -203,7 +203,7 @@ export default function StationaryBrakeStandsPage() {
 
         {/* Info blocks */}
         <section className="bg-mist">
-          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
               {infoBlocks.map((block) => (
                 <div key={block.label} className="info-card">
@@ -216,7 +216,7 @@ export default function StationaryBrakeStandsPage() {
         </section>
 
         {/* Photo gallery */}
-        <section className="bg-surface py-10 sm:py-16 lg:py-20">
+        <section className="bg-surface py-8 sm:py-10">
           <div className="mx-auto max-w-6xl px-4">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Реалізовані проєкти
@@ -231,7 +231,7 @@ export default function StationaryBrakeStandsPage() {
             >
               Усі реалізовані проєкти →
             </Link>
-            <div className="mt-6 sm:mt-10 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-5">
+            <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-5">
               {galleryImages.map((img) => (
                 <div
                   key={img.path}
@@ -252,11 +252,11 @@ export default function StationaryBrakeStandsPage() {
 
         {/* FAQ / technical specs */}
         <section className="bg-mist">
-          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Технічні характеристики гальмівного стенду RRT7500S
             </h2>
-            <FaqAccordion items={faqs} theme="dark" className="mt-10" />
+            <FaqAccordion items={faqs} theme="dark" className="mt-5 sm:mt-6" />
           </div>
         </section>
 

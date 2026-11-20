@@ -38,3 +38,19 @@ export const categories = [
     imagePath: "!IMG_3733.webp",
   },
 ];
+
+// Short card line under each device name (shared by the homepage and product pages).
+export const categoryBlurbs: Record<string, string> = {
+  "/stacionarni-galmivni-stendi": "Повний комплекс вимірювань гальмівної системи",
+  "/peresuvni-galmivni-stendi": "Встановлення без оглядової ями",
+  "/jvs-600": "Вимірювання димності дизельних двигунів",
+  "/jve-501": "5-канальний аналіз вихлопних газів",
+  "/detektor-lyuftiv": "Діагностика підвіски для техогляду",
+  "/regloskopp": "Контроль та налаштування світла фар",
+};
+
+// Where each card photo is cropped so the device stays in frame.
+export const categoryFocus: Record<string, string> = {
+  "/regloskopp": "50% 90%",
+};
+
