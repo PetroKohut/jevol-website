@@ -682,7 +682,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#contact"
-                className="btn-lift inline-flex h-12 items-center gap-2 rounded-md bg-navy px-6 text-sm font-bold text-white transition-colors hover:bg-navy-2"
+                className="btn-lift inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
               >
                 Зв&apos;язатися з нами <span aria-hidden>→</span>
               </a>
