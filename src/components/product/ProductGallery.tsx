@@ -41,7 +41,7 @@ export function ProductGallery({ photos }: { photos: Photo[] }) {
     <>
       <div
         className={`mt-5 grid gap-2 sm:mt-6 ${
-          single ? "items-center lg:grid-cols-[1.1fr_1fr] lg:gap-10" : ""
+          single ? "items-center lg:grid-cols-[360px_1fr] lg:gap-10" : ""
         } ${
           single
             ? "grid-cols-1 gap-4"
@@ -59,7 +59,7 @@ export function ProductGallery({ photos }: { photos: Photo[] }) {
             onClick={() => setOpen(i)}
             aria-label={`Збільшити фото: ${p.alt}`}
             className={`group relative cursor-zoom-in overflow-hidden rounded-xl bg-navy shadow-md ${
-              n <= 3 ? "aspect-[16/10]" : "aspect-[4/3]"
+              single ? "aspect-[4/3] max-w-sm lg:max-w-none" : n <= 3 ? "aspect-[16/10]" : "aspect-[4/3]"
             }`}
           >
             <Image
@@ -67,7 +67,7 @@ export function ProductGallery({ photos }: { photos: Photo[] }) {
               alt={p.alt}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
-              sizes={n <= 3 ? "(min-width: 1024px) 40vw, 100vw" : "(min-width: 1024px) 20vw, (min-width: 640px) 25vw, 50vw"}
+              sizes={single ? "360px" : n <= 3 ? "(min-width: 1024px) 40vw, 100vw" : "(min-width: 1024px) 20vw, (min-width: 640px) 25vw, 50vw"}
             />
           </button>
         ))}
