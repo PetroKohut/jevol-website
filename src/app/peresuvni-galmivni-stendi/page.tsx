@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { ProductHero } from "@/components/product/ProductHero";
+import { ProductGallery } from "@/components/product/ProductGallery";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -225,22 +226,12 @@ export default function MobileBrakeStandsPage() {
             >
               Усі реалізовані проєкти →
             </Link>
-            <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-5">
-              {galleryImages.map((img) => (
-                <div
-                  key={img.path}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md"
-                >
-                  <Image
-                    src={imageUrl(img.path)}
-                    alt={img.alt}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 25vw, 50vw"
-                  />
-                </div>
-              ))}
-            </div>
+            <ProductGallery
+              photos={galleryImages.map((img) => ({
+                src: imageUrl(img.path),
+                alt: img.alt,
+              }))}
+            />
           </div>
         </section>
 

@@ -77,7 +77,7 @@ export function ObjectsGallery({
           role="dialog"
           aria-modal="true"
           aria-label="Перегляд фото"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-4 backdrop-blur-md"
           onClick={() => setOpen(null)}
         >
           <button

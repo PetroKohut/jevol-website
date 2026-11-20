@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { ProductHero } from "@/components/product/ProductHero";
+import { ProductGallery } from "@/components/product/ProductGallery";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -211,22 +212,12 @@ export default function RegloskopPage() {
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Фото обладнання
             </h2>
-            <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
-              {galleryImages.map((img) => (
-                <div
-                  key={img.path}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md"
-                >
-                  <Image
-                    src={imageUrl(img.path)}
-                    alt={img.alt}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(min-width: 640px) 25vw, 50vw"
-                  />
-                </div>
-              ))}
-            </div>
+            <ProductGallery
+              photos={galleryImages.map((img) => ({
+                src: imageUrl(img.path),
+                alt: img.alt,
+              }))}
+            />
           </div>
         </section>
 
