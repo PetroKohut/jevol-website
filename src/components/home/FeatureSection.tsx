@@ -27,7 +27,6 @@ export function FeatureSection({
       <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
         <div className={`grid items-center gap-5 lg:gap-10 ${flip ? "lg:grid-cols-[1fr_300px]" : "lg:grid-cols-[300px_1fr]"}`}>
           <div
-            data-anim="photo"
             className={`relative ${flip ? "lg:order-2" : ""}`}
             style={
               { "--dx": flip ? "28px" : "-28px", "--fx": flip ? "12px" : "-12px" } as CSSProperties
@@ -57,11 +56,11 @@ export function FeatureSection({
           </div>
 
           <div>
-            <h2 data-anim="up" className="leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
+            <h2 className="leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               {title}
             </h2>
             <span aria-hidden data-anim="line" style={{ "--d": "250ms" } as CSSProperties} className="mt-3 block h-0.5 w-16 bg-brand" />
-            <p data-anim="up" style={{ "--d": "180ms" } as CSSProperties} className="mt-3 text-base leading-relaxed text-muted">{intro}</p>
+            <p className="mt-3 text-base leading-relaxed text-muted">{intro}</p>
           </div>
         </div>
 
@@ -69,7 +68,7 @@ export function FeatureSection({
           {items.map((it, i) => (
             <li
               key={it.title}
-              data-anim="up"
+              data-anim="item"
               style={{ "--d": `${(i % 3) * 110 + Math.floor(i / 3) * 70}ms` } as CSSProperties}
               className="flex gap-3 border-t border-rule pt-3"
             >

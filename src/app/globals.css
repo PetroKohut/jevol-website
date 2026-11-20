@@ -220,8 +220,10 @@ html {
     opacity: 0;
     transform: translateY(26px);
   }
-  [data-anim="photo"].anim-pending {
-    transform: translateX(var(--dx, -40px)) scale(0.95);
+  /* List items stay put (no fade/slide); only their checkmark is drawn. */
+  [data-anim="item"].anim-pending {
+    opacity: 1;
+    transform: none;
   }
   [data-anim="frame"].anim-pending {
     opacity: 1;
