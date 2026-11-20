@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { Header } from "@/components/wireframe/Header";
-import { Footer } from "@/components/wireframe/Footer";
+import { HomeHeader } from "@/components/home/HomeHeader";
+import { ProductHero } from "@/components/product/ProductHero";
+import { RelatedProducts } from "@/components/product/RelatedProducts";
+import { HomeFooter } from "@/components/home/HomeFooter";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { ContactSection } from "@/components/ContactSection";
+import { HomeContact } from "@/components/home/HomeContact";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { categories } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
@@ -168,59 +169,36 @@ const relatedCategories = categories.filter((c) => c.href !== "/regloskopp");
 
 export default function RegloskopPage() {
   return (
-    <div className="flex flex-1 flex-col bg-white">
+    <div className="flex flex-1 flex-col bg-surface font-[family-name:var(--font-manrope)] text-ink">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
+      <HomeHeader />
 
       <main className="flex-1">
-        {/* Photo header */}
-        <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[rgb(116,116,116)]">
-          <Image
-            src={imageUrl(heroImage.path)}
-            alt=""
-            aria-hidden
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
-          <div className="relative mx-auto max-w-6xl px-4 py-16">
-            <h1 className="max-w-3xl text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
+        <ProductHero
+          image={imageUrl(heroImage.path)}
+          title={
+            <>
               ПРИЛАД НАЛАШТУВАННЯ СВІТЛА ФАР - РЕГЛОСКОП (Фотометр) JVH-M100
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-gray-100">
+            </>
+          }
+          lead={
+            <>
               Реглоскоп JVH-M100 — контроль та налаштування світла фар для
               техогляду в Україні.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="https://wa.me/380504709561"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-[#25D366] px-8 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#20BD5A]"
-              >
-                Написати нам у WhatsApp
-              </a>
-              <a
-                href="https://tflgmyvvavucbmcawtzv.supabase.co/storage/v1/object/public/pdfs/JEVOL_JVH_M100.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-md border-2 border-white/40 px-8 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-white"
-              >
-                Завантажити PDF
-              </a>
-            </div>
-          </div>
-        </section>
+            </>
+          }
+          pdfHref="https://tflgmyvvavucbmcawtzv.supabase.co/storage/v1/object/public/pdfs/JEVOL_JVH_M100.pdf"
+        />
 
         <Breadcrumb current="Реглоскоп JVH-M100" />
 
         {/* FAQ */}
-        <section className="bg-white">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-4xl">
+        <section className="bg-mist">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Поширені запитання
             </h2>
             <FaqAccordion items={faqs} theme="light" className="mt-10" />
@@ -228,13 +206,13 @@ export default function RegloskopPage() {
         </section>
 
         {/* Photo gallery */}
-        <section className="bg-zinc-950 py-12 sm:py-16">
+        <section className="bg-surface py-10 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               {galleryImages.map((img) => (
                 <div
                   key={img.path}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-lg shadow-[0_0_16px_rgba(255,255,255,0.25)] transition-shadow duration-300 hover:shadow-none"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md"
                 >
                   <Image
                     src={imageUrl(img.path)}
@@ -250,12 +228,12 @@ export default function RegloskopPage() {
         </section>
 
         {/* Technical specs */}
-        <section className="bg-zinc-950">
-          <div className="mx-auto max-w-6xl px-4 pb-16 sm:pb-20">
-            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <section className="bg-mist">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Технічні параметри реглоскопа JVH-M100
             </h2>
-            <p className="mt-4 max-w-2xl text-sm text-zinc-400">
+            <p className="just mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
               Реглоскоп JVH-M100 розроблений для точних вимірювань
               світлотехніки транспортних засобів в умовах акредитованої
               лабораторії технічного контролю відповідно до вимог ДСТУ
@@ -263,12 +241,12 @@ export default function RegloskopPage() {
             </p>
             <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
               {specs.map((s) => (
-                <div key={s.title} className="border-l-2 border-orange-500 pl-4">
-                  <h3 className="font-bold text-white">
+                <div key={s.title} className="rounded-xl border border-rule border-t-2 border-t-brand bg-surface p-5 shadow-sm">
+                  <h3 className="font-extrabold text-ink">
                     {s.title} —{" "}
-                    <span className="text-orange-400">{s.range}</span>
+                    <span className="text-brand-ink">{s.range}</span>
                   </h3>
-                  <p className="mt-1 text-sm text-zinc-400">{s.text}</p>
+                  <p className="just mt-2 text-[15px] leading-relaxed text-muted">{s.text}</p>
                 </div>
               ))}
             </div>
@@ -276,40 +254,14 @@ export default function RegloskopPage() {
         </section>
 
         {/* Related products */}
-        <section className="bg-zinc-50">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-4xl">
-              Інші прилади
-            </h2>
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-5">
-              {relatedCategories.map((cat) => (
-                <Link
-                  key={cat.name}
-                  href={cat.href}
-                  className="group relative block h-40 overflow-hidden rounded-lg shadow-[0_0_16px_rgba(255,255,255,0.25)] transition-shadow duration-300 hover:shadow-none"
-                >
-                  <Image
-                    src={storageUrl("images", `${cat.imageFolder}/${cat.imagePath}`)}
-                    alt={cat.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(min-width: 640px) 25vw, 50vw"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 flex h-14 items-center bg-zinc-950/80 px-3">
-                    <span className="line-clamp-2 text-xs font-bold uppercase leading-tight tracking-wide text-white">
-                      {cat.name}
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+        <section className="bg-surface">
+          <RelatedProducts items={relatedCategories} />
         </section>
 
-        <ContactSection />
+        <HomeContact />
       </main>
 
-      <Footer />
+      <HomeFooter />
     </div>
   );
 }

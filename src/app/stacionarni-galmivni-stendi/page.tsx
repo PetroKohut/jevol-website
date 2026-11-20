@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { Header } from "@/components/wireframe/Header";
-import { Footer } from "@/components/wireframe/Footer";
+import { HomeHeader } from "@/components/home/HomeHeader";
+import { ProductHero } from "@/components/product/ProductHero";
+import { RelatedProducts } from "@/components/product/RelatedProducts";
+import { HomeFooter } from "@/components/home/HomeFooter";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { ContactSection } from "@/components/ContactSection";
+import { HomeContact } from "@/components/home/HomeContact";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { categories } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
@@ -171,65 +172,42 @@ const relatedCategories = categories.filter(
 
 export default function StationaryBrakeStandsPage() {
   return (
-    <div className="flex flex-1 flex-col bg-white">
+    <div className="flex flex-1 flex-col bg-surface font-[family-name:var(--font-manrope)] text-ink">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
+      <HomeHeader />
 
       <main className="flex-1">
-        {/* Photo header */}
-        <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[rgb(116,116,116)]">
-          <Image
-            src={imageUrl(heroImage.path)}
-            alt=""
-            aria-hidden
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
-          <div className="relative mx-auto max-w-6xl px-4 py-16">
-            <h1 className="max-w-3xl text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
+        <ProductHero
+          image={imageUrl(heroImage.path)}
+          title={
+            <>
               УНІВЕРСАЛЬНИЙ СТАЦІОНАРНИЙ ГАЛЬМІВНИЙ СТЕНД СЕРІЇ RRT
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-gray-100">
+            </>
+          }
+          lead={
+            <>
               Універсальний роликовий гальмівний стенд RRT7500S — професійне
               обладнання для проведення обов&apos;язкового технічного
               контролю транспортних засобів відповідно до вимог українського
               законодавства.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="https://wa.me/380504709561"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-[#25D366] px-8 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#20BD5A]"
-              >
-                Написати нам у WhatsApp
-              </a>
-              <a
-                href="https://tflgmyvvavucbmcawtzv.supabase.co/storage/v1/object/public/pdfs/JEVOL_%20RRT7500S.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-md border-2 border-white/40 px-8 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-white"
-              >
-                Завантажити PDF
-              </a>
-            </div>
-          </div>
-        </section>
+            </>
+          }
+          pdfHref="https://tflgmyvvavucbmcawtzv.supabase.co/storage/v1/object/public/pdfs/JEVOL_%20RRT7500S.pdf"
+        />
 
         <Breadcrumb current="Стаціонарні гальмівні стенди" />
 
         {/* Info blocks */}
-        <section className="bg-white">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+        <section className="bg-mist">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
             <div className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
               {infoBlocks.map((block) => (
-                <div key={block.label} className="border-l-2 border-orange-500 pl-4">
-                  <h2 className="font-bold text-zinc-950">{block.label}</h2>
-                  <p className="mt-1 text-sm text-zinc-600">{block.text}</p>
+                <div key={block.label} className="rounded-xl border border-rule border-t-2 border-t-brand bg-surface p-5 shadow-sm">
+                  <h2 className="font-extrabold text-ink">{block.label}</h2>
+                  <p className="just mt-2 text-[15px] leading-relaxed text-muted">{block.text}</p>
                 </div>
               ))}
             </div>
@@ -237,13 +215,13 @@ export default function StationaryBrakeStandsPage() {
         </section>
 
         {/* Photo gallery */}
-        <section className="bg-zinc-950 py-12 sm:py-16">
+        <section className="bg-surface py-10 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-5">
               {galleryImages.map((img) => (
                 <div
                   key={img.path}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-lg shadow-[0_0_16px_rgba(255,255,255,0.25)] transition-shadow duration-300 hover:shadow-none"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md"
                 >
                   <Image
                     src={imageUrl(img.path)}
@@ -259,9 +237,9 @@ export default function StationaryBrakeStandsPage() {
         </section>
 
         {/* FAQ / technical specs */}
-        <section className="bg-zinc-950">
-          <div className="mx-auto max-w-6xl px-4 pb-16 sm:pb-20">
-            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <section className="bg-mist">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Технічні характеристики гальмівного стенду RRT7500S
             </h2>
             <FaqAccordion items={faqs} theme="dark" className="mt-10" />
@@ -269,40 +247,14 @@ export default function StationaryBrakeStandsPage() {
         </section>
 
         {/* Related products */}
-        <section className="bg-zinc-50">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-4xl">
-              Інші прилади
-            </h2>
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-5">
-              {relatedCategories.map((cat) => (
-                <Link
-                  key={cat.name}
-                  href={cat.href}
-                  className="group relative block h-40 overflow-hidden rounded-lg shadow-[0_0_16px_rgba(255,255,255,0.25)] transition-shadow duration-300 hover:shadow-none"
-                >
-                  <Image
-                    src={storageUrl("images", `${cat.imageFolder}/${cat.imagePath}`)}
-                    alt={cat.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(min-width: 1024px) 20vw, (min-width: 640px) 25vw, 50vw"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 flex h-14 items-center bg-zinc-950/80 px-3">
-                    <span className="line-clamp-2 text-xs font-bold uppercase leading-tight tracking-wide text-white">
-                      {cat.name}
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+        <section className="bg-surface">
+          <RelatedProducts items={relatedCategories} />
         </section>
 
-        <ContactSection />
+        <HomeContact />
       </main>
 
-      <Footer />
+      <HomeFooter />
     </div>
   );
 }

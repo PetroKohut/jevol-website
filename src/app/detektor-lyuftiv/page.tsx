@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { Header } from "@/components/wireframe/Header";
-import { Footer } from "@/components/wireframe/Footer";
+import { HomeHeader } from "@/components/home/HomeHeader";
+import { ProductHero } from "@/components/product/ProductHero";
+import { RelatedProducts } from "@/components/product/RelatedProducts";
+import { HomeFooter } from "@/components/home/HomeFooter";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { ContactSection } from "@/components/ContactSection";
+import { HomeContact } from "@/components/home/HomeContact";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { categories } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
@@ -167,60 +168,37 @@ const relatedCategories = categories.filter(
 
 export default function PlayDetectorPage() {
   return (
-    <div className="flex flex-1 flex-col bg-white">
+    <div className="flex flex-1 flex-col bg-surface font-[family-name:var(--font-manrope)] text-ink">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
+      <HomeHeader />
 
       <main className="flex-1">
-        {/* Photo header */}
-        <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[rgb(116,116,116)]">
-          <Image
-            src={imageUrl(heroImage.path)}
-            alt=""
-            aria-hidden
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
-          <div className="relative mx-auto max-w-6xl px-4 py-16">
-            <h1 className="max-w-3xl text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
+        <ProductHero
+          image={imageUrl(heroImage.path)}
+          title={
+            <>
               ДЕТЕКТОР ЛЮФТІВ ТА ЗАЗОРІВ ХОДОВОЇ ЧАСТИНИ АВТОМОБІЛЯ
               PDT-500/PDT-800
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-gray-100">
+            </>
+          }
+          lead={
+            <>
               Детектор люфтів ходової частини JEVOL — діагностика підвіски
               для техогляду.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="https://wa.me/380504709561"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-[#25D366] px-8 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#20BD5A]"
-              >
-                Написати нам у WhatsApp
-              </a>
-              <a
-                href="https://tflgmyvvavucbmcawtzv.supabase.co/storage/v1/object/public/pdfs/JEVOL_PDT500_PDT800.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-md border-2 border-white/40 px-8 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-white"
-              >
-                Завантажити PDF
-              </a>
-            </div>
-          </div>
-        </section>
+            </>
+          }
+          pdfHref="https://tflgmyvvavucbmcawtzv.supabase.co/storage/v1/object/public/pdfs/JEVOL_PDT500_PDT800.pdf"
+        />
 
         <Breadcrumb current="Детектор люфтів ходової частини" />
 
         {/* FAQ */}
-        <section className="bg-white">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-4xl">
+        <section className="bg-mist">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Поширені запитання
             </h2>
             <FaqAccordion items={faqs} theme="light" className="mt-10" />
@@ -228,13 +206,13 @@ export default function PlayDetectorPage() {
         </section>
 
         {/* Photo gallery */}
-        <section className="bg-zinc-950 py-12 sm:py-16">
+        <section className="bg-surface py-10 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               {galleryImages.map((img) => (
                 <div
                   key={img.path}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-lg shadow-[0_0_16px_rgba(255,255,255,0.25)] transition-shadow duration-300 hover:shadow-none"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md"
                 >
                   <Image
                     src={imageUrl(img.path)}
@@ -250,32 +228,32 @@ export default function PlayDetectorPage() {
         </section>
 
         {/* Model comparison table */}
-        <section className="bg-zinc-950">
-          <div className="mx-auto max-w-6xl px-4 pb-16 sm:pb-20">
-            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <section className="bg-mist">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Технічні параметри: PDT-500 та PDT-800
             </h2>
             <div className="mt-10 overflow-x-auto">
               <table className="w-full min-w-[480px] border-collapse text-sm">
                 <thead>
-                  <tr className="border-b-2 border-zinc-700 text-left">
-                    <th className="py-2 pr-4 font-bold text-white">
+                  <tr className="border-b-2 border-rule text-left">
+                    <th className="py-2 pr-4 font-extrabold text-ink">
                       Параметр
                     </th>
-                    <th className="py-2 pr-4 font-bold text-white">
+                    <th className="py-2 pr-4 font-extrabold text-ink">
                       PDT-500
                     </th>
-                    <th className="py-2 font-bold text-white">PDT-800</th>
+                    <th className="py-2 font-extrabold text-ink">PDT-800</th>
                   </tr>
                 </thead>
                 <tbody>
                   {models.map((m) => (
-                    <tr key={m.param} className="border-b border-zinc-800">
-                      <td className="py-3 pr-4 text-zinc-400">{m.param}</td>
-                      <td className="py-3 pr-4 font-bold text-white">
+                    <tr key={m.param} className="border-b border-rule">
+                      <td className="py-3 pr-4 text-muted">{m.param}</td>
+                      <td className="py-3 pr-4 font-extrabold text-ink">
                         {m.pdt500}
                       </td>
-                      <td className="py-3 font-bold text-white">
+                      <td className="py-3 font-extrabold text-ink">
                         {m.pdt800}
                       </td>
                     </tr>
@@ -287,40 +265,14 @@ export default function PlayDetectorPage() {
         </section>
 
         {/* Related products */}
-        <section className="bg-zinc-50">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-4xl">
-              Інші прилади
-            </h2>
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-5">
-              {relatedCategories.map((cat) => (
-                <Link
-                  key={cat.name}
-                  href={cat.href}
-                  className="group relative block h-40 overflow-hidden rounded-lg shadow-[0_0_16px_rgba(255,255,255,0.25)] transition-shadow duration-300 hover:shadow-none"
-                >
-                  <Image
-                    src={storageUrl("images", `${cat.imageFolder}/${cat.imagePath}`)}
-                    alt={cat.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(min-width: 640px) 25vw, 50vw"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 flex h-14 items-center bg-zinc-950/80 px-3">
-                    <span className="line-clamp-2 text-xs font-bold uppercase leading-tight tracking-wide text-white">
-                      {cat.name}
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+        <section className="bg-surface">
+          <RelatedProducts items={relatedCategories} />
         </section>
 
-        <ContactSection />
+        <HomeContact />
       </main>
 
-      <Footer />
+      <HomeFooter />
     </div>
   );
 }
