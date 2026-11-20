@@ -82,6 +82,32 @@ html {
     transform: none;
   }
 }
+@keyframes feat-photo-in {
+  from {
+    opacity: 0.35;
+    transform: translateX(var(--dx, -28px)) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes feat-frame-in {
+  from {
+    transform: translate(var(--fx, -12px), -12px);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes check-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 @keyframes line-draw {
   from {
     transform: scaleX(0);
@@ -151,6 +177,35 @@ html {
     .why-card:nth-child(2) { animation-range: entry 6% entry 46%; }
     .why-card:nth-child(3) { animation-range: entry 12% entry 52%; }
     .why-card:nth-child(4) { animation-range: entry 18% entry 58%; }
+    /* Equipment sections: photo slides in with its frame, heading line draws,
+       checkmarks are drawn stroke by stroke. */
+    .feat-photo {
+      animation: feat-photo-in linear backwards;
+      animation-timeline: view();
+      animation-range: entry 0% entry 50%;
+    }
+    .feat-frame {
+      animation: feat-frame-in linear backwards;
+      animation-timeline: view();
+      animation-range: entry 10% entry 60%;
+    }
+    .feat-line {
+      transform-origin: left;
+      animation: line-draw linear backwards;
+      animation-timeline: view();
+      animation-range: entry 10% entry 60%;
+    }
+    .reveal-late {
+      animation: reveal-in linear backwards;
+      animation-timeline: view();
+      animation-range: entry 12% entry 52%;
+    }
+    .feat-check path {
+      stroke-dasharray: 1;
+      animation: check-draw linear backwards;
+      animation-timeline: view();
+      animation-range: entry 15% entry 65%;
+    }
     .step-line {
       transform-origin: left;
       animation: line-draw linear both;
