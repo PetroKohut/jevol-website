@@ -197,7 +197,7 @@ export default function MobileBrakeStandsPage() {
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Загальні технічні параметри гальмівного стенду RRT7500S
             </h2>
-            <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
               {specs.map((s) => (
                 <div key={s.title} className="info-card">
                   <h3 className="font-extrabold text-ink">{s.title}</h3>

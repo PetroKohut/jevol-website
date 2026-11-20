@@ -395,3 +395,10 @@ html {
   }
 }
 
+/* An odd last card spans the full row so the grid stays symmetrical. */
+@media (min-width: 640px) {
+  .info-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+

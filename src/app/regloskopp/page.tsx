@@ -239,7 +239,7 @@ export default function RegloskopPage() {
               лабораторії технічного контролю відповідно до вимог ДСТУ
               3649:2010 та ISO/IEC 17025:2017.
             </p>
-            <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
               {specs.map((s) => (
                 <div key={s.title} className="info-card">
                   <h3 className="font-extrabold text-ink">
