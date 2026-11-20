@@ -692,23 +692,29 @@ export default function Home() {
         <section id="software" className="relative scroll-mt-20 overflow-hidden bg-navy text-white">
           <div aria-hidden className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-white/[0.06] blur-3xl" />
           <div aria-hidden className="pointer-events-none absolute -bottom-52 -left-40 h-[420px] w-[420px] rounded-full bg-brand/10 blur-3xl" />
-          <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
+          <div className="relative mx-auto max-w-6xl px-4 py-10 sm:py-20 lg:py-28">
             <h2 className="reveal max-w-3xl leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Єдина система — єдиний протокол випробувань
             </h2>
-            <p className="reveal mt-4 max-w-2xl text-base text-slate-200">
-              {diagnosticsFeatures[5].text}
+            <p className="reveal just mt-3 max-w-2xl text-base text-slate-200 sm:mt-4">
+              {typo(diagnosticsFeatures[5].text)}
             </p>
-            <ol data-anim="steps" className="steps-list mt-12 grid gap-8 md:grid-cols-5 md:gap-0">
+            <ol data-anim="steps" className="steps-list mt-8 grid gap-5 sm:mt-12 md:grid-cols-5 md:gap-0">
               {protocolSteps.map((st, i) => (
                 <li
                   key={st.title}
                   style={{ "--i": i } as React.CSSProperties}
-                  className="step-item relative md:pr-5"
+                  className="step-item relative flex items-start gap-4 md:block md:pr-5"
                 >
-                  <span className="step-dot relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-brand bg-brand text-base font-extrabold text-on-brand shadow-lg shadow-brand/40">
+                  <span className="step-dot relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-brand bg-brand text-sm font-extrabold text-on-brand shadow-lg shadow-brand/40 md:h-11 md:w-11 md:text-base">
                     {i + 1}
                   </span>
+                  {i < protocolSteps.length - 1 && (
+                    <span
+                      aria-hidden
+                      className="absolute -bottom-5 left-[17px] top-10 w-px bg-gradient-to-b from-brand to-white/10 md:hidden"
+                    />
+                  )}
                   {i < protocolSteps.length - 1 && (
                     <span
                       aria-hidden
@@ -716,8 +722,8 @@ export default function Home() {
                     />
                   )}
                   <div className="step-text">
-                    <h3 className="mt-4 text-[17px] font-extrabold">{st.title}</h3>
-                    <p className="mt-1 text-[15px] text-slate-300">{st.text}</p>
+                    <h3 className="text-[17px] font-extrabold leading-snug md:mt-4">{st.title}</h3>
+                    <p className="mt-0.5 text-[15px] text-slate-300 md:mt-1">{st.text}</p>
                   </div>
                 </li>
               ))}
