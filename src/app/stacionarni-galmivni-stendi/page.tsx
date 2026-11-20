@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { ProductHero } from "@/components/product/ProductHero";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
@@ -221,8 +222,15 @@ export default function StationaryBrakeStandsPage() {
               Реалізовані проєкти
             </h2>
             <p className="mt-3 max-w-2xl text-base text-muted">
-              Лабораторії техогляду та майданчики, де встановлено обладнання JEVOL.
+              Це частина реалізованих проєктів: лабораторії техогляду та
+              майданчики, де встановлено обладнання JEVOL.
             </p>
+            <Link
+              href="/#objects"
+              className="mt-3 inline-block text-sm font-bold text-brand-ink hover:underline"
+            >
+              Усі реалізовані проєкти →
+            </Link>
             <div className="mt-6 sm:mt-10 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-5">
               {galleryImages.map((img) => (
                 <div
