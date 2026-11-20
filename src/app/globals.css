@@ -329,3 +329,69 @@ html {
   }
 }
 
+/* Product pages: info cards with an icon tile, accent top line and hover lift. */
+.info-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-rule);
+  border-radius: 0.875rem;
+  background: var(--color-surface);
+  padding: 1.5rem 1.5rem 1.5rem 5.25rem;
+  box-shadow: 0 1px 2px rgb(16 24 40 / 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.info-card::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  background-color: color-mix(in srgb, var(--color-brand) 14%, transparent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232e5280' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 5 5 9-10'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.25rem;
+  transition: background-color 0.3s ease;
+}
+.info-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--color-brand);
+  transform: scaleX(0.18);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+.info-card h2,
+.info-card h3 {
+  font-size: 1.0625rem;
+  line-height: 1.35;
+}
+@media (hover: hover) {
+  .info-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-brand);
+    box-shadow: 0 16px 32px -18px rgb(0 0 0 / 0.35);
+  }
+  .info-card:hover::after {
+    transform: scaleX(1);
+  }
+  .info-card:hover::before {
+    background-color: color-mix(in srgb, var(--color-brand) 28%, transparent);
+  }
+}
+@media (max-width: 639px) {
+  .info-card {
+    padding: 1.1rem 1.1rem 1.1rem 4rem;
+  }
+  .info-card::before {
+    left: 1.1rem;
+    top: 1.1rem;
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+}
+

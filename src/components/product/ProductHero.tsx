@@ -29,7 +29,7 @@ export function ProductHero({
           <div className="hero-in hero-in-3 mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
             <a
               href="https://wa.me/380504709561"
-              className="btn-lift inline-flex h-12 w-full items-center justify-center rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark sm:w-auto"
+              className="btn-lift inline-flex h-12 w-full items-center justify-center rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark sm:w-auto sm:min-w-[250px]"
             >
               Написати нам у WhatsApp
             </a>
@@ -37,7 +37,7 @@ export function ProductHero({
               href={pdfHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-lift inline-flex h-12 w-full items-center justify-center rounded-md border border-white/40 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-navy sm:w-auto"
+              className="btn-lift inline-flex h-12 w-full items-center justify-center rounded-md border border-white/40 px-6 text-sm font-bold text-white transition-colors hover:border-white hover:bg-white hover:text-navy sm:w-auto sm:min-w-[250px]"
             >
               Завантажити PDF
             </a>

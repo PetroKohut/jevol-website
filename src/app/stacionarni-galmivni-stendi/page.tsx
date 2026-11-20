@@ -205,7 +205,7 @@ export default function StationaryBrakeStandsPage() {
           <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
             <div className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
               {infoBlocks.map((block) => (
-                <div key={block.label} className="rounded-xl border border-rule border-t-2 border-t-brand bg-surface p-5 shadow-sm">
+                <div key={block.label} className="info-card">
                   <h2 className="font-extrabold text-ink">{block.label}</h2>
                   <p className="just mt-2 text-[15px] leading-relaxed text-muted">{block.text}</p>
                 </div>

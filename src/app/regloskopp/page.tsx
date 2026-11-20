@@ -241,7 +241,7 @@ export default function RegloskopPage() {
             </p>
             <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
               {specs.map((s) => (
-                <div key={s.title} className="rounded-xl border border-rule border-t-2 border-t-brand bg-surface p-5 shadow-sm">
+                <div key={s.title} className="info-card">
                   <h3 className="font-extrabold text-ink">
                     {s.title} —{" "}
                     <span className="text-brand-ink">{s.range}</span>
