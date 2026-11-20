@@ -36,6 +36,7 @@ export function HomeHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [catOpen, setCatOpen] = useState(false);
+  const [mobCats, setMobCats] = useState(false);
   const dropRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -62,9 +63,26 @@ export function HomeHeader() {
   const closeAll = () => {
     setMenuOpen(false);
     setCatOpen(false);
+    setMobCats(false);
   };
 
+  // Phone menu: lock page scroll behind it, close on Escape.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeAll();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [menuOpen]);
+
   return (
+    <>
     <header className="sticky top-0 z-40 border-b border-rule bg-surface/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-[68px]">
         <Link
@@ -192,28 +210,44 @@ export function HomeHeader() {
       </div>
 
       {menuOpen && (
-        <div className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-rule bg-surface lg:hidden">
-          <nav aria-label="Мобільне меню" className="mx-auto flex max-w-6xl flex-col px-4 py-2 text-base font-semibold text-ink">
-            <p className="pt-3 text-xs font-bold uppercase tracking-wider text-neutral-500">
+        <div className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-rule bg-surface shadow-2xl lg:hidden">
+          <nav aria-label="Мобільне меню" className="mx-auto flex max-w-6xl flex-col px-4 py-3 text-base font-semibold text-ink">
+            <button
+              type="button"
+              aria-expanded={mobCats}
+              onClick={() => setMobCats((v) => !v)}
+              className="flex min-h-12 w-full items-center justify-between py-2 text-left"
+            >
               Обладнання
-            </p>
-            {categories.map((c) => (
-              <Link
-                key={c.href}
-                href={c.href}
-                onClick={closeAll}
-                className="flex min-h-11 items-center py-2 text-[15px] font-medium text-muted"
-              >
-                {c.name}
-              </Link>
-            ))}
-            <div className="my-2 border-t border-rule" />
+              <Chevron open={mobCats} />
+            </button>
+            {mobCats && (
+              <div className="mb-2 ml-1 flex flex-col border-l-2 border-brand/40 pl-4">
+                <Link
+                  href="/#categories"
+                  onClick={closeAll}
+                  className="flex min-h-11 items-center py-1.5 text-[15px] font-bold text-brand-ink"
+                >
+                  Усі прилади
+                </Link>
+                {categories.map((c) => (
+                  <Link
+                    key={c.href}
+                    href={c.href}
+                    onClick={closeAll}
+                    className="flex min-h-11 items-center py-1.5 text-[15px] font-medium text-muted"
+                  >
+                    {c.name}
+                  </Link>
+                ))}
+              </div>
+            )}
             {NAV.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
                 onClick={closeAll}
-                className="flex min-h-11 items-center py-2"
+                className="flex min-h-12 items-center border-t border-rule py-2"
               >
                 {n.label}
               </Link>
@@ -221,7 +255,7 @@ export function HomeHeader() {
             <Link
               href="/#contact"
               onClick={closeAll}
-              className="mb-4 mt-2 inline-flex h-12 items-center justify-center rounded-md bg-brand text-sm font-bold text-on-brand"
+              className="mb-2 mt-3 inline-flex h-12 items-center justify-center rounded-md bg-brand text-sm font-bold text-on-brand"
             >
               Отримати консультацію
             </Link>
@@ -229,5 +263,13 @@ export function HomeHeader() {
         </div>
       )}
     </header>
+    {menuOpen && (
+      <div
+        aria-hidden
+        onClick={closeAll}
+        className="fixed inset-x-0 bottom-0 top-16 z-30 bg-black/45 lg:hidden"
+      />
+    )}
+    </>
   );
 }
