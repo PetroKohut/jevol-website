@@ -5,7 +5,7 @@ import { ContactSection } from "@/components/ContactSection";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { ObjectsGallery } from "@/components/home/ObjectsGallery";
-import { FeatureTabs } from "@/components/home/FeatureTabs";
+import { FeatureSection } from "@/components/home/FeatureSection";
 import { categories } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
 
@@ -624,17 +624,19 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Equipment details (all verified feature texts) */}
-        <section className="bg-surface">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-            <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-5xl">
-              Можливості обладнання
-            </h2>
-            <div className="reveal mt-8">
-              <FeatureTabs groups={featureGroups} />
-            </div>
-          </div>
-        </section>
+        {/* Equipment details (all verified feature texts), one block per device group */}
+        {featureGroups.map((g, i) => (
+          <FeatureSection
+            key={g.id}
+            label={g.label}
+            title={g.title}
+            intro={g.intro}
+            items={g.items}
+            image={g.image}
+            tone={i % 2 === 0 ? "light" : "mist"}
+            flip={i % 2 === 1}
+          />
+        ))}
 
         {/* 8. Software */}
         <section id="software" className="relative scroll-mt-20 overflow-hidden bg-navy text-white">
