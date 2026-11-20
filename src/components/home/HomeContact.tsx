@@ -2,8 +2,8 @@ import { ContactForm } from "@/components/ContactForm";
 
 export function HomeContact() {
   return (
-    <section className="bg-mist">
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:py-16 lg:py-20">
+    <section id="contact" className="scroll-mt-20 bg-mist">
+      <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10 lg:py-12">
         <div className="grid overflow-hidden rounded-2xl bg-surface shadow-xl lg:grid-cols-[0.85fr_1.15fr]">
           <div className="relative overflow-hidden bg-brand p-6 text-on-brand sm:p-10">
             <span aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10" />

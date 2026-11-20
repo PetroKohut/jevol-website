@@ -8,6 +8,7 @@ import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { HomeContact } from "@/components/home/HomeContact";
+import { HomeCta } from "@/components/home/HomeCta";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { categories } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
@@ -250,6 +251,7 @@ export default function MobileBrakeStandsPage() {
           <RelatedProducts items={relatedCategories} />
         </section>
 
+        <HomeCta />
         <HomeContact />
       </main>
 
