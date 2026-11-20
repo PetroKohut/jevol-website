@@ -373,9 +373,9 @@ function Check() {
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden
-      className="mt-0.5 h-5 w-5 shrink-0 text-brand-ink"
+      className="feat-check check-pop mt-0.5 h-5 w-5 shrink-0 text-brand-ink"
     >
-      <path d="m5 12 5 5 9-10" />
+      <path pathLength={1} d="m5 12 5 5 9-10" />
     </svg>
   );
 }
@@ -528,8 +528,13 @@ export default function Home() {
                 Створюємо сучасні лінії технічного контролю під ключ.
               </p>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {complexServices.map((t) => (
-                  <li key={t} className="flex gap-2.5 text-[15px] font-semibold">
+                {complexServices.map((t, i) => (
+                  <li
+                    key={t}
+                    data-anim="item"
+                    style={{ "--d": `${i * 140}ms` } as React.CSSProperties}
+                    className="flex gap-2.5 text-[15px] font-semibold"
+                  >
                     <Check />
                     {t}
                   </li>

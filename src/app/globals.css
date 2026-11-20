@@ -232,6 +232,8 @@ html {
   }
   .feat-check path {
     stroke-dasharray: 1;
+  }
+  li[data-anim]:not(.anim-pending) .feat-check path {
     transition: stroke-dashoffset 0.7s ease-out calc(var(--d, 0ms) + 350ms);
   }
   li[data-anim].anim-pending .feat-check path {
@@ -283,6 +285,25 @@ html {
   /* Ripple on the final step once the chain is lit. */
   [data-anim="steps"]:not(.anim-pending) .step-item:last-child .step-dot {
     animation: pulse-ring 1.3s ease-out 2.3s 2;
+  }
+}
+
+/* Checkmarks in the "Комплексне оснащення" list: drawn one by one (shared
+   .feat-check rule), then a small pop. Desktop pointer only. */
+@keyframes check-pop {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+  li[data-anim="item"]:not(.anim-pending) .check-pop {
+    animation: check-pop 0.45s ease-out calc(var(--d, 0ms) + 750ms) backwards;
   }
 }
 
