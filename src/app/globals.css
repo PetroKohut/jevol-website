@@ -316,12 +316,16 @@ html {
   text-wrap: pretty;
 }
 
-/* Justified only where columns are wide enough; phones keep a ragged right edge
-   (justifying a ~300px column leaves big gaps between words). */
-@media (min-width: 640px) {
+/* Justified on every screen size. On narrow phone columns, words may be hyphenated
+   more eagerly so the inter-word gaps stay small. */
+.just {
+  text-align: justify;
+  text-justify: inter-word;
+}
+@media (max-width: 639px) {
   .just {
-    text-align: justify;
-    text-justify: inter-word;
+    hyphenate-limit-chars: 6 3 3;
+    word-spacing: -0.02em;
   }
 }
 
