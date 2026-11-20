@@ -609,7 +609,7 @@ export default function Home() {
         <section id="objects" className="scroll-mt-20 bg-mist">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
             <h2 className="reveal text-3xl font-extrabold tracking-tight sm:text-5xl">
-              Об&apos;єкти, де ми встановили обладнання
+              Реалізовані проєкти
             </h2>
             <p className="reveal mt-3 max-w-2xl text-muted">
               Лабораторії техогляду та майданчики, де встановлено обладнання JEVOL.
