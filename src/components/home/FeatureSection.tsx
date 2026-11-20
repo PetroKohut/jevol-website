@@ -27,14 +27,16 @@ export function FeatureSection({
       <div className="mx-auto max-w-6xl px-4 py-8 sm:py-10">
         <div className={`grid items-center gap-5 lg:gap-10 ${flip ? "lg:grid-cols-[1fr_300px]" : "lg:grid-cols-[300px_1fr]"}`}>
           <div
-            className={`feat-photo relative ${flip ? "lg:order-2" : ""}`}
+            data-anim="photo"
+            className={`relative ${flip ? "lg:order-2" : ""}`}
             style={
               { "--dx": flip ? "28px" : "-28px", "--fx": flip ? "12px" : "-12px" } as CSSProperties
             }
           >
             <div
               aria-hidden
-              className={`feat-frame absolute -bottom-3 hidden h-full w-full rounded-xl border border-brand/50 sm:block ${
+              data-anim="frame"
+              className={`absolute -bottom-3 hidden h-full w-full rounded-xl border border-brand/50 sm:block ${
                 flip ? "-left-3" : "-right-3"
               }`}
             />
@@ -54,18 +56,23 @@ export function FeatureSection({
             </div>
           </div>
 
-          <div className="reveal">
-            <h2 className="leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
+          <div>
+            <h2 data-anim="up" className="leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               {title}
             </h2>
-            <span aria-hidden className="feat-line mt-3 block h-0.5 w-16 bg-brand" />
-            <p className="reveal-late mt-3 text-base leading-relaxed text-muted">{intro}</p>
+            <span aria-hidden data-anim="line" style={{ "--d": "250ms" } as CSSProperties} className="mt-3 block h-0.5 w-16 bg-brand" />
+            <p data-anim="up" style={{ "--d": "180ms" } as CSSProperties} className="mt-3 text-base leading-relaxed text-muted">{intro}</p>
           </div>
         </div>
 
         <ul className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((it) => (
-            <li key={it.title} className="reveal flex gap-3 border-t border-rule pt-3">
+          {items.map((it, i) => (
+            <li
+              key={it.title}
+              data-anim="up"
+              style={{ "--d": `${(i % 3) * 110 + Math.floor(i / 3) * 70}ms` } as CSSProperties}
+              className="flex gap-3 border-t border-rule pt-3"
+            >
               <span
                 aria-hidden
                 className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand/15 text-brand-ink"

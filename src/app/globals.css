@@ -177,35 +177,6 @@ html {
     .why-card:nth-child(2) { animation-range: entry 6% entry 46%; }
     .why-card:nth-child(3) { animation-range: entry 12% entry 52%; }
     .why-card:nth-child(4) { animation-range: entry 18% entry 58%; }
-    /* Equipment sections: photo slides in with its frame, heading line draws,
-       checkmarks are drawn stroke by stroke. */
-    .feat-photo {
-      animation: feat-photo-in linear backwards;
-      animation-timeline: view();
-      animation-range: entry 0% entry 50%;
-    }
-    .feat-frame {
-      animation: feat-frame-in linear backwards;
-      animation-timeline: view();
-      animation-range: entry 10% entry 60%;
-    }
-    .feat-line {
-      transform-origin: left;
-      animation: line-draw linear backwards;
-      animation-timeline: view();
-      animation-range: entry 10% entry 60%;
-    }
-    .reveal-late {
-      animation: reveal-in linear backwards;
-      animation-timeline: view();
-      animation-range: entry 12% entry 52%;
-    }
-    .feat-check path {
-      stroke-dasharray: 1;
-      animation: check-draw linear backwards;
-      animation-timeline: view();
-      animation-range: entry 15% entry 65%;
-    }
     .step-line {
       transform-origin: left;
       animation: line-draw linear both;
@@ -235,5 +206,40 @@ html {
 #contact input:not([type="checkbox"]):focus,
 #contact textarea:focus {
   border-color: var(--color-brand);
+}
+
+/* Equipment sections: time-based entrance, started by AnimObserver when the
+   element scrolls into view (desktop pointer, no reduced motion). Without JS
+   or on touch/mobile nothing is ever hidden. */
+@media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+  [data-anim] {
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--d, 0ms);
+  }
+  [data-anim].anim-pending {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  [data-anim="photo"].anim-pending {
+    transform: translateX(var(--dx, -40px)) scale(0.95);
+  }
+  [data-anim="frame"].anim-pending {
+    opacity: 1;
+    transform: translate(var(--fx, -14px), -14px);
+  }
+  [data-anim="line"].anim-pending {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+  [data-anim="line"] {
+    transform-origin: left;
+  }
+  .feat-check path {
+    stroke-dasharray: 1;
+    transition: stroke-dashoffset 0.7s ease-out calc(var(--d, 0ms) + 350ms);
+  }
+  li[data-anim].anim-pending .feat-check path {
+    stroke-dashoffset: 1;
+  }
 }
 

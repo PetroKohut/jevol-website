@@ -6,6 +6,7 @@ import { HomeHeader } from "@/components/home/HomeHeader";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { ObjectsGallery } from "@/components/home/ObjectsGallery";
 import { FeatureSection } from "@/components/home/FeatureSection";
+import { AnimObserver } from "@/components/home/AnimObserver";
 import { categories } from "@/lib/categories";
 import { storageUrl } from "@/lib/storage";
 
@@ -704,6 +705,7 @@ export default function Home() {
       </main>
 
       <HomeFooter />
+      <AnimObserver />
     </div>
   );
 }
