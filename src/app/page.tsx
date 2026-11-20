@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ContactSection } from "@/components/ContactSection";
+import { HomeContact } from "@/components/home/HomeContact";
 import { HomeHeader } from "@/components/home/HomeHeader";
 import { HomeFooter } from "@/components/home/HomeFooter";
 import { ObjectsGallery } from "@/components/home/ObjectsGallery";
@@ -741,7 +741,7 @@ export default function Home() {
         </section>
 
         <div id="contact" className="scroll-mt-20">
-          <ContactSection />
+          <HomeContact />
         </div>
       </main>
 
