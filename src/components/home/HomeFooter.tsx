@@ -5,8 +5,8 @@ import { categories } from "@/lib/categories";
 export function HomeFooter() {
   return (
     <footer className="bg-navy text-slate-200">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
-        <div>
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 px-4 py-10 md:gap-10 md:py-14 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
+        <div className="col-span-2 md:col-span-1">
           <Image
             src="/logo-jevol-light.png"
             alt="JEVOL"
@@ -49,7 +49,7 @@ export function HomeFooter() {
           </ul>
         </nav>
 
-        <div>
+        <div className="col-span-2 md:col-span-1">
           <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
             Контакти
           </h2>

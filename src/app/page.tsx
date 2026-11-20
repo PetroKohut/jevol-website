@@ -733,7 +733,7 @@ export default function Home() {
 
         {/* 9. CTA */}
         <section className="border-t-2 border-brand bg-mist text-ink">
-          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 md:flex-row md:items-center">
+          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-8 sm:py-12 md:flex-row md:items-center">
             <div className="max-w-2xl">
               <h2 className="leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
                 Потрібна консультація щодо оснащення лабораторії?

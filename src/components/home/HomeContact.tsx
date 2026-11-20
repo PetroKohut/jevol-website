@@ -3,9 +3,9 @@ import { ContactForm } from "@/components/ContactForm";
 export function HomeContact() {
   return (
     <section className="bg-mist">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:py-16 lg:py-20">
         <div className="grid overflow-hidden rounded-2xl bg-surface shadow-xl lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="relative overflow-hidden bg-brand p-8 text-on-brand sm:p-10">
+          <div className="relative overflow-hidden bg-brand p-6 text-on-brand sm:p-10">
             <span aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10" />
             <span aria-hidden className="pointer-events-none absolute -bottom-24 -left-10 h-60 w-60 rounded-full bg-white/[0.07]" />
             <h2 className="relative text-balance text-2xl font-extrabold leading-tight tracking-tight sm:text-3xl lg:text-[2.25rem]">
@@ -14,7 +14,7 @@ export function HomeContact() {
             <p className="relative mt-4 text-base text-on-brand/90">
               Ми зв&apos;яжемось з вами для консультації
             </p>
-            <div className="relative mt-10 grid gap-4">
+            <div className="relative mt-6 grid gap-4 sm:mt-10">
               <a
                 href="mailto:info.jevol@gmail.com"
                 className="flex w-fit items-center gap-3 font-semibold transition-opacity hover:opacity-80"
@@ -34,7 +34,7 @@ export function HomeContact() {
               </a>
             </div>
           </div>
-          <div className="p-6 sm:p-10">
+          <div className="p-5 sm:p-10">
             <ContactForm variant="home" />
           </div>
         </div>
