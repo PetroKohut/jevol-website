@@ -234,6 +234,12 @@ const heroSlides = [
 // 3 = truck on a JEVOL mobile brake stand (hero), 10 = test line with control
 // cabin (complex fitting), 14 = lab with a stationary stand (big gallery tile),
 // 15 / 11 / 5 = small gallery tiles. The lightbox opens all of them.
+// Where each card photo is cropped (object-position), so the device stays in
+// frame on the wide mobile cards.
+const categoryFocus: Record<string, string> = {
+  "/regloskopp": "50% 90%",
+};
+
 const HERO_PHOTO = heroSlides[3];
 const COMPLEX_PHOTO = heroSlides[10];
 const GALLERY_BIG = 14;
@@ -492,6 +498,7 @@ export default function Home() {
                       src={storageUrl("images", `${cat.imageFolder}/${cat.imagePath}`)}
                       alt={cat.name}
                       fill
+                      style={{ objectPosition: categoryFocus[cat.href] ?? "50% 50%" }}
                       className="object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none"
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     />
