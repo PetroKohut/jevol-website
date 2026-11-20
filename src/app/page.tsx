@@ -467,7 +467,7 @@ export default function Home() {
 
         {/* 4. Catalog */}
         <section id="categories" className="scroll-mt-20 bg-surface">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
             <div className="reveal flex items-end justify-between gap-6">
               <div>
                 <p className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
@@ -526,16 +526,39 @@ export default function Home() {
 
         {/* 5. Complex fitting */}
         <section id="complex" className="scroll-mt-20 bg-mist">
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[1fr_1.15fr]">
-            <div className="reveal">
+          {/* Mobile order: heading, photo, list. Desktop: text on the left, photo on the right. */}
+          <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 sm:py-16 lg:grid-cols-[1fr_1.15fr] lg:content-center lg:gap-x-10 lg:gap-y-6 lg:py-20">
+            <div className="reveal lg:col-start-1 lg:row-start-1">
               <h2 className="leading-tight text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
                 Комплексне оснащення лабораторій технічного контролю
               </h2>
-              <p className="mt-4 max-w-lg text-base text-muted">
+              <p className="mt-3 max-w-lg text-base text-muted sm:mt-4">
                 Від підбору обладнання до монтажу та навчання персоналу.
                 Створюємо сучасні лінії технічного контролю під ключ.
               </p>
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            </div>
+
+            <div className="reveal relative mb-5 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mb-0 lg:self-center">
+              <div aria-hidden className="absolute -bottom-4 -right-4 hidden h-full w-full rounded-xl bg-brand/15 sm:block" />
+              <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-navy shadow-xl sm:aspect-[4/3]">
+                <Image
+                  src={COMPLEX_PHOTO.src}
+                  alt={COMPLEX_PHOTO.alt}
+                  fill
+                  sizes="(min-width: 1024px) 55vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-5 left-4 rounded-lg bg-brand px-4 py-2.5 text-on-brand shadow-xl sm:left-6 sm:px-5 sm:py-3">
+                <p className="text-2xl font-extrabold leading-none sm:text-3xl">100+</p>
+                <p className="mt-1 text-xs font-semibold text-on-brand/80">
+                  лабораторій оснащено
+                </p>
+              </div>
+            </div>
+
+            <div className="reveal lg:col-start-1 lg:row-start-2">
+              <ul className="grid gap-2.5 sm:grid-cols-2 sm:gap-3">
                 {complexServices.map((t, i) => {
                   // Two columns: left column top to bottom first, then the right one.
                   const rows = Math.ceil(complexServices.length / 2);
@@ -555,35 +578,17 @@ export default function Home() {
               </ul>
               <a
                 href="#software"
-                className="mt-8 btn-lift inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark"
+                className="mt-6 btn-lift inline-flex h-12 items-center gap-2 rounded-md bg-brand px-6 text-sm font-bold text-on-brand transition-colors hover:bg-brand-dark sm:mt-8"
               >
                 Дізнатися більше <span aria-hidden>→</span>
               </a>
-            </div>
-            <div className="reveal relative">
-              <div aria-hidden className="absolute -bottom-4 -right-4 hidden h-full w-full rounded-xl bg-brand/15 sm:block" />
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-navy shadow-xl">
-                <Image
-                  src={COMPLEX_PHOTO.src}
-                  alt={COMPLEX_PHOTO.alt}
-                  fill
-                  sizes="(min-width: 1024px) 55vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-5 left-4 rounded-lg bg-brand px-5 py-3 text-on-brand shadow-xl sm:left-6">
-                <p className="text-3xl font-extrabold leading-none">100+</p>
-                <p className="mt-1 text-xs font-semibold text-on-brand/80">
-                  лабораторій оснащено
-                </p>
-              </div>
             </div>
           </div>
         </section>
 
         {/* 6. Why JEVOL */}
         <section id="service" className="scroll-mt-20 bg-surface">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
             <p className="reveal mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
               <span aria-hidden className="h-0.5 w-8 bg-brand" />
               Переваги
@@ -650,7 +655,7 @@ export default function Home() {
 
         {/* 7. Objects */}
         <section id="objects" className="scroll-mt-20 bg-mist">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-4 py-10 sm:py-16 lg:py-20">
             <h2 className="reveal text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
               Реалізовані проєкти
             </h2>
