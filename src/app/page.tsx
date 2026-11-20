@@ -400,7 +400,7 @@ export default function Home() {
                 Сучасне високоточне обладнання для діагностики транспортних
                 засобів
               </h1>
-              <p className="hero-in hero-in-3 mt-5 max-w-lg text-lg text-slate-300 sm:text-xl">
+              <p className="hero-in hero-in-3 mt-5 max-w-lg text-lg text-slate-200 sm:text-xl">
                 Гальмівні стенди, детектор люфтів, газоаналізатор, димомір,
                 реглоскоп та додаткове обладнання для техогляду.
               </p>
@@ -522,7 +522,7 @@ export default function Home() {
               <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
                 Комплексне оснащення лабораторій технічного контролю
               </h2>
-              <p className="mt-4 max-w-lg text-muted">
+              <p className="mt-4 max-w-lg text-lg text-muted">
                 Від підбору обладнання до монтажу та навчання персоналу.
                 Створюємо сучасні лінії технічного контролю під ключ.
               </p>
@@ -588,7 +588,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-extrabold leading-snug">{c.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                  <p className="mt-3 text-[15px] leading-relaxed text-muted">
                     {c.item.text}
                   </p>
                 </div>
@@ -598,7 +598,7 @@ export default function Home() {
               {[trustItems[3], trustItems[5]].map((t) => (
                 <div key={t.title}>
                   <h3 className="font-extrabold">{t.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{t.text}</p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-muted">{t.text}</p>
                 </div>
               ))}
             </div>
@@ -644,7 +644,7 @@ export default function Home() {
             <h2 className="reveal max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
               Єдина система — єдиний протокол випробувань
             </h2>
-            <p className="reveal mt-4 max-w-2xl text-slate-300">
+            <p className="reveal mt-4 max-w-2xl text-lg text-slate-200">
               {diagnosticsFeatures[5].text}
             </p>
             <ol className="reveal mt-12 grid gap-8 md:grid-cols-5 md:gap-0">
@@ -660,7 +660,7 @@ export default function Home() {
                     />
                   )}
                   <h3 className="mt-4 font-bold">{st.title}</h3>
-                  <p className="mt-1 text-sm text-slate-400">{st.text}</p>
+                  <p className="mt-1 text-sm text-slate-300">{st.text}</p>
                 </li>
               ))}
             </ol>

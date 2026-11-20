@@ -4,7 +4,7 @@ import { categories } from "@/lib/categories";
 
 export function HomeFooter() {
   return (
-    <footer className="bg-navy text-slate-300">
+    <footer className="bg-navy text-slate-200">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div>
           <Image
@@ -14,7 +14,7 @@ export function HomeFooter() {
             height={97}
             className="h-11 w-auto"
           />
-          <p className="mt-4 max-w-xs text-sm text-slate-400">
+          <p className="mt-4 max-w-xs text-sm text-slate-300">
             Офіційний представник Shanghai JEVOL в Україні. Обладнання для
             випробувальних лабораторій та технічного контролю транспортних
             засобів.

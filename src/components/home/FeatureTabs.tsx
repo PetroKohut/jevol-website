@@ -65,7 +65,7 @@ export function FeatureTabs({ groups }: { groups: Group[] }) {
             <h3 className="max-w-2xl text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
               {g.title}
             </h3>
-            <p className="mt-3 max-w-2xl text-muted">{g.intro}</p>
+            <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted">{g.intro}</p>
 
             <div className="mt-8 overflow-hidden rounded-xl border border-rule bg-surface">
               {g.items.map((it, i) => {
@@ -121,7 +121,7 @@ export function FeatureTabs({ groups }: { groups: Group[] }) {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <p className="px-6 pb-5 text-[15px] leading-relaxed text-muted">
+                        <p className="px-6 pb-6 text-base leading-[1.7] text-muted">
                           {it.text}
                         </p>
                       </div>

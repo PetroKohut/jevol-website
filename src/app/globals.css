@@ -17,7 +17,7 @@
   --color-surface: #ffffff;
   --color-mist: #f3f5f8;
   --color-ink: #111111;
-  --color-muted: #55595f;
+  --color-muted: #343a42;
   --color-rule: #e2e5ea;
   --color-navy: #0d0d0d;
   --color-navy-2: #1a1a1a;
@@ -158,4 +158,9 @@ html {
       animation-range: entry 20% cover 45%;
     }
   }
+}
+
+/* Body copy on light sections: medium weight so thin grey text stays readable. */
+.text-muted {
+  font-weight: 500;
 }
