@@ -27,11 +27,15 @@ export function FaqAccordion({
   const styles = THEME_STYLES[theme];
 
   return (
-    <div className={`divide-y ${styles.divide} ${className}`}>
+    <div className={`grid gap-2.5 ${className}`}>
       {items.map((item, index) => (
-        <details key={item.question} className="group" open={index === 0}>
+        <details
+          key={item.question}
+          className="group overflow-hidden rounded-xl border border-rule bg-surface/60 transition-colors open:border-brand/40 open:border-l-4 open:border-l-brand open:bg-brand/[0.08] hover:border-brand/40"
+          open={index === 0}
+        >
           <summary
-            className={`flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 pr-10 [&::-webkit-details-marker]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${styles.ringOffset}`}
+            className={`flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${styles.ringOffset}`}
           >
             <span
               className={`text-[17px] font-extrabold leading-snug transition-colors duration-200 ${styles.question} ${styles.questionHover}`}
@@ -48,7 +52,7 @@ export function FaqAccordion({
               />
             </span>
           </summary>
-          <p className={`just pb-6 pr-10 text-[15px] leading-relaxed ${styles.answer}`}>{item.answer}</p>
+          <p className={`just px-5 pb-5 text-[15px] leading-relaxed ${styles.answer}`}>{item.answer}</p>
         </details>
       ))}
     </div>
