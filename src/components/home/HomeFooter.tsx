@@ -34,9 +34,9 @@ export function HomeFooter() {
           </ul>
         </nav>
 
-        <nav aria-label="Каталог обладнання">
+        <nav aria-label="Прилади">
           <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
-            Каталог
+            Прилади
           </h2>
           <ul className="grid gap-2.5 text-sm">
             {categories.map((c) => (

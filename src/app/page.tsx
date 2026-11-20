@@ -465,7 +465,7 @@ export default function Home() {
               <div>
                 <p className="mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-brand-ink">
                   <span aria-hidden className="h-0.5 w-8 bg-brand" />
-                  Каталог
+                  Прилади
                 </p>
                 <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2.25rem]">
                   Обладнання JEVOL
@@ -476,7 +476,7 @@ export default function Home() {
                 href="/#categories"
                 className="mb-1 shrink-0 text-sm font-bold text-brand-ink hover:underline"
               >
-                Весь каталог →
+                Усі прилади →
               </Link>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
