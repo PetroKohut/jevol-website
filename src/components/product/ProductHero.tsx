@@ -18,7 +18,7 @@ export function ProductHero({
     <section className="relative bg-navy text-white">
       <div className="mx-auto grid max-w-6xl items-center gap-6 px-4 py-8 sm:gap-10 sm:py-14 lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:py-20">
         <div>
-          <h1 className="hero-in text-balance text-[1.6rem] font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.4rem]">
+          <h1 className="hero-in text-balance text-[1.35rem] font-extrabold leading-[1.18] tracking-tight sm:text-4xl lg:text-[2.4rem]">
             {title}
           </h1>
           {lead && (

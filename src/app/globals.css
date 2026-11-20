@@ -436,3 +436,17 @@ html {
   }
 }
 
+/* Headings: balanced lines (no one-word last line). */
+main h1,
+main h2,
+main h3 {
+  text-wrap: balance;
+}
+@media (max-width: 639px) {
+  /* Long section titles: a notch smaller on phones so they fit in 3 lines. */
+  main h2 {
+    font-size: 1.3rem;
+    line-height: 1.22;
+  }
+}
+

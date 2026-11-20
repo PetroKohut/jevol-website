@@ -31,7 +31,7 @@ export function RelatedProducts({ items }: { items: Cat[] }) {
               <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-3 text-white sm:p-4">
                 <div>
-                  <h3 className="text-[15px] font-extrabold leading-snug sm:text-[17px]">{cat.name}</h3>
+                  <h3 className="text-[15px] font-extrabold leading-snug sm:text-[17px] lg:text-[15px]">{cat.name}</h3>
                   <p className="mt-1 hidden text-[13px] sm:block leading-snug text-slate-200">
                     {categoryBlurbs[cat.href]}
                   </p>

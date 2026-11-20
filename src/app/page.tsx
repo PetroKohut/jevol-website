@@ -392,7 +392,7 @@ export default function Home() {
               <p className="hero-in w-fit rounded bg-brand px-3 py-1.5 text-on-brand text-[11px] font-bold uppercase tracking-wider sm:text-xs">
                 Офіційний представник JEVOL в Україні
               </p>
-              <h1 className="hero-in hero-in-2 mt-4 text-[1.85rem] font-extrabold leading-[1.12] tracking-tight sm:mt-6 sm:text-5xl lg:text-[2.85rem]">
+              <h1 className="hero-in hero-in-2 mt-4 text-[1.85rem] font-extrabold leading-[1.12] tracking-tight sm:mt-6 sm:text-5xl lg:text-[2.6rem]">
                 Сучасне високоточне обладнання для діагностики транспортних
                 засобів
               </h1>
